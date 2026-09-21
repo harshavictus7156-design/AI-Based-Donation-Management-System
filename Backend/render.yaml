@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: ai-donation-system-backend
+    env: python
+    plan: free
+    region: oregon
+    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput"
+    startCommand: "gunicorn donation_system.wsgi:application --bind 0.0.0.0:$PORT"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: donation_system.settings
+      - key: DEBUG
+        value: "False"
+      - key: DB_ENGINE
+        value: sqlite3

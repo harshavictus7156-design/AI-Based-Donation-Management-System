@@ -19,9 +19,15 @@ SECRET_KEY = os.getenv(
     'django-insecure-local-development-key',
 )
 
-DEBUG = os.getenv("DEBUG", "True").lower() == "true"
+DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0', '[::1]', '.vercel.app', '*']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0', '[::1]', '.vercel.app']
+render_host = os.getenv('RENDER_EXTERNAL_HOSTNAME')
+if render_host:
+    ALLOWED_HOSTS.append(render_host)
+vercel_url = os.getenv('VERCEL_URL')
+if vercel_url:
+    ALLOWED_HOSTS.append(vercel_url)
 
 
 
@@ -261,8 +267,17 @@ CORS_ALLOWED_ORIGINS = [
     'https://ai-based-donation-management-system-hazel.vercel.app',
 ]
 
+vercel_url = os.getenv('VERCEL_URL')
+if vercel_url:
+    CORS_ALLOWED_ORIGINS.append(f'https://{vercel_url}')
+
+render_host = os.getenv('RENDER_EXTERNAL_HOSTNAME')
+if render_host:
+    CORS_ALLOWED_ORIGINS.append(f'https://{render_host}')
+
 CORS_ALLOWED_ORIGIN_REGEXES = [
     r'^https://.*\.vercel\.app$',
+    r'^https://.*\.onrender\.com$',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
@@ -270,7 +285,13 @@ CSRF_TRUSTED_ORIGINS = [
     'http://127.0.0.1:5173',
     'https://ai-based-donation-management-system-hazel.vercel.app',
     'https://*.vercel.app',
+    'https://*.onrender.com',
 ]
+
+for origin in list(CORS_ALLOWED_ORIGINS):
+    if origin.startswith('https://'):
+        CSRF_TRUSTED_ORIGINS.append(origin)
+
 
 CORS_ALLOW_CREDENTIALS = True
 
