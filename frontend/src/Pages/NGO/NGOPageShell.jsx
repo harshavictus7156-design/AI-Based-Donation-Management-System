@@ -1,0 +1,7 @@
+import { useLocation, useNavigate } from "react-router-dom";
+import NGOSidebar from "./NGOSidebar";
+import "./NGOPageShell.css";
+
+const titles={
+ "/ngo-dashboard":["Dashboard","Overview of your NGO activity"],"/ngo-donations":["Donations","Review and manage incoming donations"],"/ngo-requirements":["Requirements","Manage what your NGO currently needs"],"/ngo-allocations":["Allocations","See how donations are allocated"],"/ngo-pickups":["Pickups","Manage donation pickup requests"],"/ngo-analytics":["Analytics","A simple view of your operational data"],"/ngo-impact":["Impact","Track completed donation outcomes"],"/ngo-notifications":["Notifications","Important updates for your NGO"],"/ngo-profile":["Organization Profile","Manage your NGO information"],"/ngo-settings":["Settings","Manage workspace preferences"]};
+export default function NGOPageShell({children}){const location=useLocation();const navigate=useNavigate();const [title,subtitle]=titles[location.pathname]||["NGO Workspace",""];const dashboard=location.pathname==="/ngo-dashboard";return <div className="ngo-shell"><NGOSidebar/><main className="ngo-main"><header className="ngo-appbar"> <div>{!dashboard&&<button className="ngo-back" onClick={()=>navigate("/ngo-dashboard")}>← Back to Dashboard</button>}<h1>{title}</h1><p>{subtitle}</p></div><button className="ngo-mobile-menu" aria-label="Open menu">☰</button></header><section className="ngo-page-content">{children}</section></main></div>}

@@ -1,0 +1,227 @@
+/* =====================================================
+   PROFILE PAGE
+===================================================== */
+
+.profile-page {
+  min-height: 100vh;
+  padding: 50px 20px;
+  background: #f5f8f5;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.profile-badge {
+  display: inline-block;
+  padding: 7px 16px;
+  border-radius: 20px;
+  background: #DBEAFE;
+  color: #2563EB;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.profile-header h1 {
+  margin: 15px 0 8px;
+  color: #2563EB;
+  font-size: 36px;
+}
+
+.profile-header p {
+  margin: 0;
+  color: #666;
+  font-size: 16px;
+}
+
+
+/* =====================================================
+   PROFILE CARD
+===================================================== */
+
+.profile-card {
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 35px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =====================================================
+   PROFILE IMAGE
+===================================================== */
+
+.profile-image-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.profile-image {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #DBEAFE;
+}
+
+.profile-placeholder {
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: #DBEAFE;
+  border: 5px solid #DDD6FE;
+
+  font-size: 55px;
+}
+
+
+/* =====================================================
+   PROFILE FIELDS
+===================================================== */
+
+.profile-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 16px 5px;
+  border-bottom: 1px solid #eeeeee;
+
+  gap: 25px;
+}
+
+.profile-field:last-child {
+  border-bottom: none;
+}
+
+.profile-field strong {
+  color: #333;
+  font-size: 15px;
+  min-width: 180px;
+}
+
+.profile-field span {
+  color: #555;
+  text-align: right;
+  word-break: break-word;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.profile-field span:last-child {
+  font-weight: 500;
+}
+/* =====================================================
+   PROFILE IMAGE UPLOAD
+===================================================== */
+
+.profile-upload-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+.profile-upload-button {
+  display: inline-block;
+  padding: 11px 20px;
+  border-radius: 8px;
+  background: #2563EB;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.profile-upload-button:hover {
+  background: #256428;
+}
+
+.profile-file-input {
+  display: none;
+}
+
+.profile-upload-section small {
+  color: #777;
+  font-size: 12px;
+}
+
+/* =====================================================
+   ERROR / BUTTON
+===================================================== */
+
+.profile-card button {
+  margin-top: 20px;
+  padding: 11px 22px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #2563EB;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.profile-card button:hover {
+  background: #256428;
+}
+
+
+/* =====================================================
+   MOBILE RESPONSIVE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .profile-page {
+    padding: 30px 15px;
+  }
+
+  .profile-header h1 {
+    font-size: 28px;
+  }
+
+  .profile-card {
+    padding: 25px 20px;
+  }
+
+  .profile-field {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .profile-field strong {
+    min-width: auto;
+  }
+
+  .profile-field span {
+    text-align: left;
+  }
+
+}

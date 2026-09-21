@@ -1,0 +1,637 @@
+/* =========================================================
+   AI DONATIONS - COHESIVE PREMIUM PINK + WHITE UI
+   One shared visual layer for Donor, NGO, Admin and public pages.
+   No application logic is changed here.
+========================================================= */
+
+/* ---------- Global typography hierarchy ---------- */
+body, button, input, textarea, select { font-family: var(--font-ui) !important; }
+body { font-size: 14px; line-height: 1.55; }
+
+h1, h2, h3, h4, h5, h6 { color: var(--text-primary); font-family: var(--font-ui); font-weight: 700; letter-spacing: -.02em; }
+h1 { font-weight: 800; }
+button, .btn, [role="button"] { font-weight: 600; }
+small, .caption, .helper-text { color: var(--text-muted); }
+
+/* ---------- App backgrounds ---------- */
+.home-page, .login-page, .register-choice-page, .register-choice-container,
+.profile-page, .dashboard-page, .donate-page, .my-donations-page,
+.donor-layout, .ngo-layout, .ngo-page-shell, .ngo-profile-page,
+.ngo-details-page, .explore-ngos-page, .ngo-feature-page {
+  background: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* ---------- Public navbar ---------- */
+.navbar {
+  min-height: 68px;
+  padding: 12px clamp(18px, 4vw, 48px) !important;
+  background: color-mix(in srgb, var(--bg-card) 94%, transparent) !important;
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  box-shadow: 0 4px 18px rgba(111,48,69,.05) !important;
+  backdrop-filter: blur(16px);
+}
+.logo { color: var(--primary) !important; font-family: var(--font-ui) !important; font-weight: 800 !important; }
+.nav-links a, .navbar a { color: var(--text-secondary) !important; font-weight: 600 !important; }
+.nav-links a:hover, .navbar a:hover { color: var(--primary) !important; }
+.logout-button { border-radius: 10px; }
+
+/* ---------- Shared buttons ---------- */
+button.primary, .primary-btn, .home-primary-btn, .get-started-button,
+.donor-primary-cta, .profile-upload-button, .ngo-save-button,
+.ngo-action-row button, .ngo-item-actions .good, .ngo-feature-head > button,
+.login-button:hover {
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: #fff !important;
+}
+button.primary:hover, .primary-btn:hover, .home-primary-btn:hover,
+.get-started-button:hover, .donor-primary-cta:hover, .profile-upload-button:hover,
+.ngo-save-button:hover, .ngo-action-row button:hover {
+  background: var(--primary-hover) !important;
+  border-color: var(--primary-hover) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--primary) 20%, transparent);
+}
+
+button.secondary, .secondary-btn, .outline-btn, .login-button {
+  background: var(--bg-card) !important;
+  color: var(--primary) !important;
+  border: 1px solid var(--border-color) !important;
+}
+button.secondary:hover, .secondary-btn:hover, .outline-btn:hover, .login-button:hover {
+  background: var(--primary-light) !important;
+  border-color: var(--primary) !important;
+}
+
+/* ---------- Forms ---------- */
+input, textarea, select, .input-wrapper, .search-bar, .search-input {
+  background: var(--input-bg) !important;
+  color: var(--input-text) !important;
+  border-color: var(--border-color) !important;
+  font-family: var(--font-ui) !important;
+}
+input::placeholder, textarea::placeholder { color: var(--text-muted) !important; }
+input:focus, textarea:focus, select:focus, .input-wrapper:focus-within {
+  outline: none !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 14%, transparent) !important;
+}
+label, .form-label { color: var(--text-primary); font-weight: 600; }
+
+/* ---------- Shared cards / panels ---------- */
+.card, .donate-card, .profile-card, .dashboard-card, .form-card,
+.stat-card, .notification-card, .donation-card, .donor-status-card,
+.donor-quick-card, .ngo-card, .ngo-details-header, .ngo-details-section,
+.ngo-info-card, .ngo-form-card, .ngo-settings-card, .ngo-notice,
+.my-donation-card, .empty-donations, .feature-card, .how-it-works,
+.login-card {
+  background: var(--bg-card) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.card:hover, .donate-card:hover, .profile-card:hover, .dashboard-card:hover,
+.stat-card:hover, .ngo-card:hover, .my-donation-card:hover {
+  box-shadow: var(--shadow) !important;
+}
+
+/* ---------- Donor shell ---------- */
+.donor-layout-content { background: var(--bg-primary) !important; }
+.donor-appbar {
+  background: color-mix(in srgb, var(--bg-card) 92%, transparent) !important;
+  border-bottom-color: var(--border-color) !important;
+  box-shadow: 0 4px 18px rgba(111,48,69,.05) !important;
+}
+.donor-appbar-kicker, .donor-appbar h1 { color: var(--primary) !important; }
+.donor-appbar p, .donor-appbar-user small { color: var(--text-secondary) !important; }
+.donor-appbar-notification, .donor-menu-button {
+  background: var(--bg-card) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+.donor-appbar-notification span { background: var(--primary) !important; }
+.donor-appbar-avatar { background: var(--primary-light) !important; color: var(--primary) !important; }
+.donor-appbar-user strong { color: var(--text-primary) !important; }
+
+/* Donor sidebar: light mode = white / soft pink */
+.donor-sidebar {
+  background: var(--bg-card) !important;
+  color: var(--text-primary) !important;
+  border-right: 1px solid var(--border-color) !important;
+  box-shadow: 8px 0 28px rgba(111,48,69,.06) !important;
+}
+.sidebar-brand { border-bottom: 1px solid var(--border-color); }
+.sidebar-brand-mark { background: var(--primary) !important; color: #fff !important; box-shadow: 0 7px 18px color-mix(in srgb, var(--primary) 20%, transparent) !important; }
+.sidebar-brand strong { color: var(--text-primary) !important; font-weight: 800 !important; }
+.sidebar-brand span { color: var(--text-muted) !important; }
+.sidebar-user { background: var(--bg-secondary) !important; border-color: var(--border-color) !important; }
+.sidebar-avatar { background: var(--primary-light) !important; color: var(--primary) !important; }
+.sidebar-user-copy strong { color: var(--text-primary) !important; }
+.sidebar-user-copy span { color: var(--text-muted) !important; }
+.sidebar-section-label { color: var(--text-muted) !important; }
+.sidebar-link { color: var(--text-secondary) !important; border-radius: 10px !important; }
+.sidebar-link:hover { color: var(--primary) !important; background: var(--primary-light) !important; }
+.sidebar-link.active { color: var(--primary) !important; background: var(--primary-light) !important; box-shadow: inset 3px 0 0 var(--primary) !important; }
+.sidebar-link.active::before { background: var(--primary) !important; }
+.sidebar-badge { background: var(--primary) !important; color: #fff !important; }
+.sidebar-theme-row { background: var(--bg-secondary) !important; border-color: var(--border-color) !important; }
+.sidebar-theme-label, .sidebar-logout { color: var(--text-secondary) !important; }
+.sidebar-logout:hover { color: var(--primary) !important; background: var(--primary-light) !important; }
+
+/* ---------- NGO shell + sidebar ---------- */
+.ngo-layout-content, .ngo-main { background: var(--bg-primary) !important; }
+.ngo-appbar {
+  background: color-mix(in srgb, var(--bg-card) 94%, transparent) !important;
+  border-bottom-color: var(--border-color) !important;
+  box-shadow: 0 4px 18px rgba(111,48,69,.05) !important;
+}
+.ngo-appbar-kicker, .ngo-back-button { color: var(--primary) !important; }
+.ngo-appbar h1 { color: var(--text-primary) !important; font-weight: 800 !important; }
+.ngo-appbar p { color: var(--text-secondary) !important; }
+.ngo-appbar-notification, .ngo-menu-button { background: var(--bg-card) !important; color: var(--text-primary) !important; border-color: var(--border-color) !important; }
+.ngo-appbar-notification span { background: var(--primary) !important; }
+.ngo-appbar-avatar { background: var(--primary-light) !important; color: var(--primary) !important; }
+.ngo-appbar-user strong { color: var(--text-primary) !important; }
+.ngo-appbar-user small { color: var(--text-muted) !important; }
+
+.ngo-sidebar {
+  background: var(--bg-card) !important;
+  color: var(--text-primary) !important;
+  border-right: 1px solid var(--border-color) !important;
+  box-shadow: 8px 0 28px rgba(111,48,69,.06) !important;
+}
+.ngo-sidebar-brand { border-bottom: 1px solid var(--border-color); }
+.ngo-sidebar-brand-mark { background: var(--primary) !important; color: #fff !important; }
+.ngo-sidebar-brand strong { color: var(--text-primary) !important; font-weight: 800 !important; }
+.ngo-sidebar-brand span, .ngo-sidebar-user span { color: var(--text-muted) !important; }
+.ngo-sidebar-user { background: var(--bg-secondary) !important; border-color: var(--border-color) !important; }
+.ngo-sidebar-avatar { background: var(--primary-light) !important; color: var(--primary) !important; }
+.ngo-sidebar-user strong { color: var(--text-primary) !important; }
+.ngo-sidebar-nav p { color: var(--text-muted) !important; }
+.ngo-sidebar-link { color: var(--text-secondary) !important; border-radius: 10px !important; }
+.ngo-sidebar-link:hover { color: var(--primary) !important; background: var(--primary-light) !important; }
+.ngo-sidebar-link.active { color: var(--primary) !important; background: var(--primary-light) !important; }
+.ngo-sidebar-link.active:before { background: var(--primary) !important; }
+.ngo-theme-row { background: var(--bg-secondary) !important; }
+.ngo-theme-row span, .ngo-sidebar-bottom button { color: var(--text-secondary) !important; }
+.ngo-sidebar-bottom button:hover { color: var(--primary) !important; background: var(--primary-light) !important; }
+
+/* ---------- Dashboards ---------- */
+.dashboard-page, .donor-dashboard-modern, .ngo-dashboard {
+  color: var(--text-primary) !important;
+  background: var(--bg-primary) !important;
+}
+.dashboard-stat-card, .stat-card, .dashboard-card, .donor-stat-card,
+.ngo-clean-stats article, .ngo-clean-mini-grid article {
+  background: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+.dashboard-stat-card h3, .stat-card h3, .dashboard-card h3,
+.donor-stat-card h3, .ngo-clean-stats strong { color: var(--text-primary) !important; }
+.dashboard-stat-card .icon, .stat-card .icon, .donor-stat-card .icon,
+.ngo-clean-stats article b { background: var(--primary-light) !important; color: var(--primary) !important; }
+.dashboard-eyebrow, .section-heading span, .donor-quick-card > span,
+.donor-section-kicker, .ngo-eyebrow { color: var(--primary) !important; }
+
+/* ---------- Donor dashboard pink identity ---------- */
+.donor-dashboard-modern, .donor-dashboard-modern * { font-family: var(--font-ui) !important; }
+.donor-dashboard-modern {
+  --primary: #2563EB !important;
+  --primary-hover: #1D4ED8 !important;
+  --accent: #38BDF8 !important;
+}
+.donor-dashboard-modern .donor-hero,
+.donor-dashboard-modern .donor-welcome-card {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%) !important;
+  color: #fff !important;
+}
+.donor-dashboard-modern .donor-hero h1,
+.donor-dashboard-modern .donor-hero p,
+.donor-dashboard-modern .donor-welcome-card h1,
+.donor-dashboard-modern .donor-welcome-card p { color: #fff !important; }
+.donor-dashboard-modern .donor-primary-cta { background: #fff !important; color: #1D4ED8 !important; }
+.donor-dashboard-modern .donor-primary-cta:hover { background: #EFF6FF !important; }
+
+/* ---------- Home / auth ---------- */
+.home-page .home-eyebrow, .register-badge, .ngo-profile-badge,
+.login-eyebrow, .feature-icon, .profile-badge {
+  background: var(--primary-light) !important;
+  color: var(--primary) !important;
+  border-color: var(--border-color) !important;
+}
+.home-page .home-hero h1 span, .register-hero h1 span, .register-hero h1 span,
+.profile-header h1, .login-eyebrow, .forgot-button { color: var(--primary) !important; }
+.home-page .home-hero-buttons button:first-child { background: var(--primary) !important; color: #fff !important; }
+.login-page { background: var(--bg-primary) !important; }
+.login-brand, .ngo-register-brand, .brand-logo-panel { background: linear-gradient(145deg, #1D4ED8, #2563EB) !important; }
+.login-card, .ngo-register-card { background: var(--bg-card) !important; border-color: var(--border-color) !important; }
+.login-header h2, .form-group label, .register-hero h1, .profile-header h1 { color: var(--text-primary) !important; }
+.login-header > p:last-child, .register-hero p, .profile-header p, .form-group small { color: var(--text-secondary) !important; }
+
+/* ---------- Donor secondary pages ---------- */
+.donate-page, .my-donations-page, .donor-notifications-page, .my-activity-page { color: var(--text-primary) !important; }
+.donate-hero { background: linear-gradient(135deg, #1D4ED8, #2563EB) !important; }
+.donate-hero h1, .donate-hero p, .donate-hero h1 span { color: #fff !important; }
+.coral-icon, .verified-label, .my-donations-badge { background: var(--primary-light) !important; color: var(--primary) !important; }
+.donor-information { background: var(--bg-secondary) !important; border-color: var(--border-color) !important; }
+.my-donation-image { background: var(--bg-secondary) !important; }
+.timeline-step.active, .timeline-step.active span, .active-line { color: var(--primary) !important; background: var(--primary) !important; }
+
+/* ---------- NGO feature pages ---------- */
+.ngo-feature-page, .ngo-page-content { color: var(--text-primary) !important; }
+.ngo-page-header h1, .ngo-feature-head h2, .ngo-settings-card h2, .ngo-details-header h1 { color: var(--text-primary) !important; }
+.ngo-page-header p, .ngo-feature-head p, .ngo-settings-row p, .ngo-details-header p { color: var(--text-secondary) !important; }
+.ngo-form-card input, .ngo-form-card select, .ngo-form-card textarea,
+.ngo-settings-card input, .ngo-settings-card select, .ngo-settings-card textarea { background: var(--input-bg) !important; color: var(--input-text) !important; border-color: var(--border-color) !important; }
+.ngo-view-details, .ngo-edit-button, .ngo-refresh-button { color: var(--primary) !important; }
+.ngo-status, .mini-status { font-family: var(--font-ui) !important; font-weight: 600; }
+
+/* ---------- Tables ---------- */
+table { width: 100%; border-collapse: separate; border-spacing: 0; color: var(--text-primary); }
+th { color: var(--text-secondary) !important; background: var(--bg-secondary) !important; font-weight: 700 !important; }
+td { color: var(--text-primary) !important; border-color: var(--border-color) !important; }
+tbody tr:hover { background: var(--primary-light) !important; }
+
+/* ---------- Dropdowns / modals / tabs / alerts ---------- */
+.dropdown, .dropdown-menu, .menu, .popover, .modal-content, .dialog,
+[role="dialog"], .tabs, .tab-panel, .toast, .alert, .notification-panel {
+  background: var(--bg-card) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+.tab.active, .tabs .active { color: var(--primary) !important; border-color: var(--primary) !important; }
+.alert-info { background: var(--primary-light) !important; color: var(--primary) !important; }
+
+/* ---------- Empty / loading ---------- */
+.empty-state, .ngo-empty-state, .ngo-empty { color: var(--text-secondary) !important; }
+.empty-state-icon, .ngo-empty-icon { background: var(--primary-light) !important; color: var(--primary) !important; }
+.spinner, .ngo-loading-spinner, .ngo-small-spinner { border-top-color: var(--primary) !important; }
+
+/* ---------- Footer ---------- */
+.footer { background: #1D4ED8 !important; color: #FFF5F8 !important; }
+
+/* =========================================================
+   DARK MODE - every shared visual surface follows the same
+   low-glare rose/charcoal system.
+========================================================= */
+[data-theme="dark"] body, body.dark-theme, html.dark-mode body {
+  background: #08111F !important;
+  color: #FFF5F8 !important;
+}
+
+[data-theme="dark"] .navbar, body.dark-theme .navbar, html.dark-mode .navbar,
+[data-theme="dark"] .donor-appbar, body.dark-theme .donor-appbar,
+[data-theme="dark"] .ngo-appbar, body.dark-theme .ngo-appbar {
+  background: rgba(33,25,28,.94) !important;
+  border-color: #403238 !important;
+}
+
+[data-theme="dark"] .donor-sidebar, body.dark-theme .donor-sidebar, html.dark-mode .donor-sidebar,
+[data-theme="dark"] .ngo-sidebar, body.dark-theme .ngo-sidebar, html.dark-mode .ngo-sidebar {
+  background: #122235 !important;
+  border-color: #403238 !important;
+  box-shadow: 8px 0 28px rgba(0,0,0,.22) !important;
+}
+
+[data-theme="dark"] .sidebar-brand, body.dark-theme .sidebar-brand,
+[data-theme="dark"] .ngo-sidebar-brand, body.dark-theme .ngo-sidebar-brand {
+  border-color: #403238 !important;
+}
+
+[data-theme="dark"] .sidebar-user, body.dark-theme .sidebar-user,
+[data-theme="dark"] .ngo-sidebar-user, body.dark-theme .ngo-sidebar-user,
+[data-theme="dark"] .sidebar-theme-row, body.dark-theme .ngo-theme-row {
+  background: #172B43 !important;
+  border-color: #403238 !important;
+}
+
+[data-theme="dark"] .sidebar-link, body.dark-theme .sidebar-link,
+[data-theme="dark"] .ngo-sidebar-link, body.dark-theme .ngo-sidebar-link { color: #CBBBC1 !important; }
+[data-theme="dark"] .sidebar-link:hover, body.dark-theme .sidebar-link:hover,
+[data-theme="dark"] .sidebar-link.active, body.dark-theme .sidebar-link.active,
+[data-theme="dark"] .ngo-sidebar-link:hover, body.dark-theme .ngo-sidebar-link:hover,
+[data-theme="dark"] .ngo-sidebar-link.active, body.dark-theme .ngo-sidebar-link.active {
+  color: #FFF5F8 !important;
+  background: #17345A !important;
+}
+
+[data-theme="dark"] .card, body.dark-theme .card,
+[data-theme="dark"] .donate-card, body.dark-theme .donate-card,
+[data-theme="dark"] .profile-card, body.dark-theme .profile-card,
+[data-theme="dark"] .dashboard-card, body.dark-theme .dashboard-card,
+[data-theme="dark"] .form-card, body.dark-theme .form-card,
+[data-theme="dark"] .stat-card, body.dark-theme .stat-card,
+[data-theme="dark"] .notification-card, body.dark-theme .notification-card,
+[data-theme="dark"] .donation-card, body.dark-theme .donation-card,
+[data-theme="dark"] .ngo-card, body.dark-theme .ngo-card,
+[data-theme="dark"] .ngo-form-card, body.dark-theme .ngo-form-card,
+[data-theme="dark"] .ngo-settings-card, body.dark-theme .ngo-settings-card,
+[data-theme="dark"] .my-donation-card, body.dark-theme .my-donation-card,
+[data-theme="dark"] .login-card, body.dark-theme .login-card {
+  background: #142B43 !important;
+  color: #FFF5F8 !important;
+  border-color: #403238 !important;
+}
+
+[data-theme="dark"] input, [data-theme="dark"] textarea, [data-theme="dark"] select,
+body.dark-theme input, body.dark-theme textarea, body.dark-theme select,
+html.dark-mode input, html.dark-mode textarea, html.dark-mode select {
+  background: #122235 !important;
+  color: #FFF5F8 !important;
+  border-color: #403238 !important;
+}
+[data-theme="dark"] input::placeholder, [data-theme="dark"] textarea::placeholder,
+body.dark-theme input::placeholder, body.dark-theme textarea::placeholder { color: #9E8C93 !important; }
+
+[data-theme="dark"] table, body.dark-theme table { color: #FFF5F8 !important; }
+[data-theme="dark"] th, body.dark-theme th { background: #172B43 !important; color: #CBBBC1 !important; }
+[data-theme="dark"] td, body.dark-theme td { color: #FFF5F8 !important; border-color: #403238 !important; }
+[data-theme="dark"] tbody tr:hover, body.dark-theme tbody tr:hover { background: #17345A !important; }
+
+[data-theme="dark"] .home-page, [data-theme="dark"] .login-page,
+[data-theme="dark"] .register-choice-page, [data-theme="dark"] .profile-page,
+[data-theme="dark"] .dashboard-page, [data-theme="dark"] .donate-page,
+[data-theme="dark"] .my-donations-page, [data-theme="dark"] .ngo-feature-page,
+body.dark-theme .home-page, body.dark-theme .login-page,
+body.dark-theme .register-choice-page, body.dark-theme .profile-page,
+body.dark-theme .dashboard-page, body.dark-theme .donate-page,
+body.dark-theme .my-donations-page, body.dark-theme .ngo-feature-page {
+  background: #08111F !important;
+  color: #FFF5F8 !important;
+}
+
+[data-theme="dark"] .home-page h1, [data-theme="dark"] .home-page h2,
+[data-theme="dark"] .profile-header h1, [data-theme="dark"] .register-hero h1,
+[data-theme="dark"] .ngo-page-header h1, [data-theme="dark"] .ngo-feature-head h2,
+body.dark-theme .home-page h1, body.dark-theme .home-page h2,
+body.dark-theme .profile-header h1, body.dark-theme .register-hero h1,
+body.dark-theme .ngo-page-header h1, body.dark-theme .ngo-feature-head h2 { color: #FFF5F8 !important; }
+
+[data-theme="dark"] .login-brand, [data-theme="dark"] .ngo-register-brand,
+body.dark-theme .login-brand, body.dark-theme .ngo-register-brand {
+  background: linear-gradient(145deg, #17345A, #1D4E7A) !important;
+}
+
+[data-theme="dark"] .footer, body.dark-theme .footer { background: #122235 !important; color: #FFF5F8 !important; }
+
+/* ---------- Semantic statuses stay semantic ---------- */
+.status-pending, .mini-status.pending { background: #FFF3DD !important; color: #9A650F !important; }
+.status-accepted, .status-collected, .status-completed,
+.mini-status.accepted, .mini-status.collected, .mini-status.completed,
+.mini-status.delivered { background: #E9F7F0 !important; color: #27724F !important; }
+.status-rejected { background: #DBEAFE !important; color: #1D4ED8 !important; }
+[data-theme="dark"] .status-pending, body.dark-theme .status-pending { background: #3B2B18 !important; color: #E2B35E !important; }
+[data-theme="dark"] .status-accepted, [data-theme="dark"] .status-collected,
+[data-theme="dark"] .status-completed, [data-theme="dark"] .mini-status.accepted,
+[data-theme="dark"] .mini-status.collected, [data-theme="dark"] .mini-status.completed,
+[data-theme="dark"] .mini-status.delivered, body.dark-theme .status-accepted,
+body.dark-theme .status-collected, body.dark-theme .status-completed { background: #183328 !important; color: #71C49D !important; }
+[data-theme="dark"] .status-rejected, body.dark-theme .status-rejected { background: #17345A !important; color: #93C5FD !important; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .donor-appbar, .ngo-appbar { padding-left: 20px !important; padding-right: 20px !important; }
+}
+
+@media (max-width: 850px) {
+  .donor-sidebar, .ngo-sidebar { box-shadow: 18px 0 45px rgba(15, 35, 60, .20) !important; }
+  .donor-layout-content, .ngo-layout-content { margin-left: 0 !important; }
+  .donor-appbar, .ngo-appbar { min-height: 70px !important; }
+}
+
+@media (max-width: 600px) {
+  body { font-size: 13px; }
+  h1 { font-size: clamp(24px, 7vw, 32px); }
+  h2 { font-size: 20px; }
+  .card, .donate-card, .profile-card, .dashboard-card, .form-card { border-radius: 14px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* =========================================================
+   FINAL DARK VIOLET GRADIENT POLISH
+   CSS ONLY - preserves application behavior
+========================================================= */
+
+:root {
+  --app-bg: #F7FAFF;
+  --app-surface: #FFFFFF;
+  --app-surface-2: #EFF6FF;
+  --app-border: #E2E8F0;
+  --app-text: #0F172A;
+  --app-text-2: #475569;
+  --app-muted: #94A3B8;
+  --app-violet: #2563EB;
+  --app-violet-strong: #1D4ED8;
+  --app-violet-bright: #38BDF8;
+  --app-violet-soft: #DBEAFE;
+  --app-gradient: linear-gradient(135deg, #1D4ED8 0%, #38BDF8 100%);
+}
+
+html[data-theme="dark"], body.dark-theme {
+  --app-bg: #08111F;
+  --app-surface: #122235;
+  --app-surface-2: #172B43;
+  --app-border: #34263F;
+  --app-text: #FAF7FF;
+  --app-text-2: #C4B8CF;
+  --app-muted: #9B8EA8;
+  --app-violet: #60A5FA;
+  --app-violet-strong: #2563EB;
+  --app-violet-bright: #60A5FA;
+  --app-violet-soft: #352044;
+  --app-gradient: linear-gradient(135deg, #1E40AF 0%, #38BDF8 100%);
+}
+
+html, body, #root {
+  background: var(--app-bg);
+  color: var(--app-text);
+}
+
+/* Keep one font family, but preserve hierarchy through size/weight. */
+body, body *, button, input, select, textarea {
+  font-family: 'Manrope', ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+
+body { font-size: 14px; line-height: 1.55; }
+h1 { font-size: clamp(28px, 3vw, 40px); font-weight: 800; line-height: 1.12; }
+h2 { font-size: 24px; font-weight: 700; line-height: 1.2; }
+h3 { font-size: 18px; font-weight: 700; line-height: 1.3; }
+h4, h5, h6 { font-weight: 700; }
+
+/* Universal surfaces */
+.card, .dashboard-card, .dashboard-stat-card, .stat-card,
+.donation-card, .donor-card, .ngo-card, .ngo-item-card,
+.profile-card, .form-card, .feature-card, .notification-card,
+.login-card, .form-container, .table-card, .modal-content,
+.dropdown-menu, .empty-donations, .my-donation-card {
+  background: var(--app-surface) !important;
+  color: var(--app-text) !important;
+  border-color: var(--app-border) !important;
+}
+
+/* Donor + NGO sidebars */
+.donor-sidebar, .ngo-sidebar, .sidebar {
+  background: var(--app-surface) !important;
+  color: var(--app-text) !important;
+  border-color: var(--app-border) !important;
+}
+
+.donor-nav-item, .ngo-nav-item, .nav-item, .sidebar-item {
+  color: var(--app-text-2) !important;
+}
+
+.donor-nav-item:hover, .ngo-nav-item:hover,
+.nav-item:hover, .sidebar-item:hover {
+  background: var(--app-violet-soft) !important;
+  color: var(--app-violet) !important;
+}
+
+.donor-nav-item.active, .ngo-nav-item.active,
+.nav-item.active, .sidebar-item.active {
+  background: var(--app-violet-soft) !important;
+  color: var(--app-violet) !important;
+}
+
+/* App bars */
+.donor-appbar, .ngo-appbar, .appbar, .navbar, header {
+  background: color-mix(in srgb, var(--app-surface) 94%, transparent) !important;
+  color: var(--app-text) !important;
+  border-color: var(--app-border) !important;
+}
+
+/* Inputs */
+input, select, textarea {
+  background: var(--app-surface) !important;
+  color: var(--app-text) !important;
+  border-color: var(--app-border) !important;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--app-violet) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--app-violet) 16%, transparent) !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--app-muted) !important;
+}
+
+/* Buttons and important CTAs */
+.btn-primary, .primary-btn, .donate-btn, .cta-btn,
+button.primary, button[type="submit"] {
+  background: var(--app-gradient) !important;
+  color: #FFFFFF !important;
+  border-color: transparent !important;
+}
+
+.btn-primary:hover, .primary-btn:hover, .donate-btn:hover,
+.cta-btn:hover, button.primary:hover, button[type="submit"]:hover {
+  background: linear-gradient(135deg, var(--app-violet-strong), var(--app-violet-bright)) !important;
+  transform: translateY(-1px);
+}
+
+/* Secondary controls */
+.btn-secondary, .secondary-btn, .outline-btn {
+  background: var(--app-surface) !important;
+  color: var(--app-violet) !important;
+  border-color: color-mix(in srgb, var(--app-violet) 28%, var(--app-border)) !important;
+}
+
+/* Dark mode: every common surface must follow the violet family. */
+html[data-theme="dark"] body,
+body.dark-theme {
+  background: #08111F !important;
+  color: #FAF7FF !important;
+}
+
+html[data-theme="dark"] .donor-sidebar,
+html[data-theme="dark"] .ngo-sidebar,
+body.dark-theme .donor-sidebar,
+body.dark-theme .ngo-sidebar {
+  background: #0D1B2A !important;
+  border-color: #34263F !important;
+}
+
+html[data-theme="dark"] .donor-appbar,
+html[data-theme="dark"] .ngo-appbar,
+body.dark-theme .donor-appbar,
+body.dark-theme .ngo-appbar {
+  background: #122235 !important;
+  border-color: #34263F !important;
+}
+
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .dashboard-card,
+html[data-theme="dark"] .dashboard-stat-card,
+html[data-theme="dark"] .stat-card,
+html[data-theme="dark"] .donation-card,
+html[data-theme="dark"] .donor-card,
+html[data-theme="dark"] .ngo-card,
+html[data-theme="dark"] .profile-card,
+html[data-theme="dark"] .form-card,
+html[data-theme="dark"] .notification-card,
+html[data-theme="dark"] .modal-content,
+html[data-theme="dark"] .dropdown-menu,
+body.dark-theme .card,
+body.dark-theme .dashboard-card,
+body.dark-theme .dashboard-stat-card,
+body.dark-theme .stat-card,
+body.dark-theme .donation-card,
+body.dark-theme .donor-card,
+body.dark-theme .ngo-card,
+body.dark-theme .profile-card,
+body.dark-theme .form-card,
+body.dark-theme .notification-card,
+body.dark-theme .modal-content,
+body.dark-theme .dropdown-menu {
+  background: #122235 !important;
+  color: #FAF7FF !important;
+  border-color: #34263F !important;
+}
+
+html[data-theme="dark"] input,
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea,
+body.dark-theme input,
+body.dark-theme select,
+body.dark-theme textarea {
+  background: #172B43 !important;
+  color: #FAF7FF !important;
+  border-color: #40304B !important;
+}
+
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder,
+body.dark-theme input::placeholder,
+body.dark-theme textarea::placeholder {
+  color: #9B8EA8 !important;
+}
+
+/* Do not flatten semantic status colors. */
+.status-success, .success, .accepted, .completed { color: #4ADE80; }
+.status-warning, .warning, .pending { color: #FBBF24; }
+.status-error, .error, .rejected { color: #F87171; }
+
+/* Responsive spacing */
+@media (max-width: 850px) {
+  .donor-layout-content, .ngo-layout-content { margin-left: 0 !important; }
+  .donor-appbar, .ngo-appbar { min-height: 68px !important; }
+}
+
+@media (max-width: 600px) {
+  body { font-size: 13px; }
+  h1 { font-size: clamp(25px, 8vw, 32px); }
+  h2 { font-size: 21px; }
+  h3 { font-size: 17px; }
+}

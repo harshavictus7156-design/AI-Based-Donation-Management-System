@@ -1,0 +1,305 @@
+/* =========================================================
+   ADMIN DONATIONS
+   Theme: Navy + Ivory + Blue
+   Matches Login.css
+========================================================= */
+
+:root {
+    --admin-navy: #0F172A;
+    --admin-navy-light: #475569;
+
+    --admin-ivory: #FAFAF9;
+    --admin-white: #FFFFFF;
+
+    --admin-blue: #2563EB;
+    --admin-blue-dark: #1D4ED8;
+    --admin-blue-soft: #DBEAFE;
+
+    --admin-text: #0F172A;
+    --admin-text-light: #334155;
+    --admin-muted: #64748B;
+
+    --admin-border: #E2E8F0;
+    --admin-border-light: #F1F5F9;
+
+    --admin-shadow:
+        0 4px 14px rgba(15, 23, 42, 0.05);
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.admin-page-content {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 30px;
+
+    background: var(--admin-ivory);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: var(--admin-text);
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.admin-page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 24px;
+    margin-bottom: 25px;
+
+    border-bottom: 1px solid var(--admin-border);
+}
+
+.admin-page-header h1 {
+    margin: 0;
+
+    color: var(--admin-navy);
+
+    font-size: 28px;
+    font-weight: 700;
+
+    letter-spacing: -0.4px;
+
+    line-height: 1.2;
+}
+
+.admin-page-header p {
+    margin: 7px 0 0;
+
+    color: var(--admin-muted);
+
+    font-size: 13px;
+    font-weight: 400;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   EMPTY CARD
+========================================================= */
+
+.admin-empty-card {
+    width: 100%;
+    min-height: 330px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 30px;
+
+    box-sizing: border-box;
+
+    background: var(--admin-white);
+
+    border: 1px solid var(--admin-border);
+
+    border-radius: 14px;
+
+    box-shadow: var(--admin-shadow);
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   EMPTY ICON
+========================================================= */
+
+.admin-empty-icon {
+    width: 62px;
+    height: 62px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: var(--admin-blue-soft);
+
+    border: 1px solid #BFDBFE;
+
+    font-size: 28px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   EMPTY TITLE
+========================================================= */
+
+.admin-empty-card h2 {
+    margin: 0;
+
+    color: var(--admin-navy);
+
+    font-size: 18px;
+    font-weight: 700;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   EMPTY DESCRIPTION
+========================================================= */
+
+.admin-empty-card p {
+    margin: 9px auto 0;
+
+    max-width: 450px;
+
+    color: var(--admin-muted);
+
+    font-size: 12px;
+    font-weight: 400;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .admin-page-content {
+        padding: 25px;
+    }
+
+    .admin-page-header h1 {
+        font-size: 25px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .admin-page-content {
+        padding: 20px 15px 30px;
+    }
+
+    .admin-page-header {
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+
+    .admin-page-header h1 {
+        font-size: 23px;
+    }
+
+    .admin-page-header p {
+        font-size: 12px;
+    }
+
+    .admin-empty-card {
+        min-height: 280px;
+
+        padding: 45px 20px;
+    }
+}
+
+
+@media (max-width: 430px) {
+
+    .admin-page-content {
+        padding: 16px 12px 25px;
+    }
+
+    .admin-page-header h1 {
+        font-size: 21px;
+    }
+
+    .admin-page-header p {
+        font-size: 11px;
+    }
+
+    .admin-empty-card {
+        min-height: 260px;
+
+        padding: 40px 18px;
+
+        border-radius: 12px;
+    }
+
+    .admin-empty-icon {
+        width: 56px;
+        height: 56px;
+
+        margin-bottom: 15px;
+
+        font-size: 25px;
+    }
+
+    .admin-empty-card h2 {
+        font-size: 17px;
+    }
+
+    .admin-empty-card p {
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+.dark .admin-page-content {
+    background: #0F172A;
+}
+
+.dark .admin-page-header {
+    border-bottom-color: #334155;
+}
+
+.dark .admin-page-header h1 {
+    color: #F8FAFC;
+}
+
+.dark .admin-page-header p {
+    color: #94A3B8;
+}
+
+.dark .admin-empty-card {
+    background: #1E293B;
+
+    border-color: #334155;
+}
+
+.dark .admin-empty-icon {
+    background: rgba(37, 99, 235, 0.15);
+
+    border-color: rgba(96, 165, 250, 0.25);
+}
+
+.dark .admin-empty-card h2 {
+    color: #F8FAFC;
+}
+
+.dark .admin-empty-card p {
+    color: #94A3B8;
+}

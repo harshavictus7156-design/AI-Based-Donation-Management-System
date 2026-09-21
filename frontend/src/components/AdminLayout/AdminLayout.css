@@ -1,0 +1,268 @@
+.admin-layout {
+    min-height: 100vh;
+    background: #f5f7fb;
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.admin-layout .admin-sidebar {
+    width: 250px;
+    min-height: 100vh;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    background: #ffffff;
+
+    border-right: 1px solid #e5e7eb;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 100;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.admin-layout .admin-logo {
+    height: 90px;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    border-bottom: 1px solid #f0f1f4;
+}
+
+.admin-layout .admin-logo-icon {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 12px;
+
+    background: #eef4ff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 23px;
+}
+
+.admin-layout .admin-logo-text h2 {
+    margin: 0;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    color: #111827;
+}
+
+.admin-layout .admin-logo-text span {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 11px;
+
+    color: #6b7280;
+}
+
+
+/* =====================================================
+   MENU TITLE
+===================================================== */
+
+.admin-layout .admin-menu-title {
+    padding: 25px 22px 10px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    color: #9ca3af;
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   MENU
+===================================================== */
+
+.admin-layout .admin-menu {
+    padding: 5px 12px;
+}
+
+
+.admin-layout .admin-menu-item {
+
+    width: 100%;
+
+    height: 45px;
+
+    padding: 0 13px;
+
+    margin-bottom: 5px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: transparent;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.admin-layout .admin-menu-item:hover {
+
+    background: #f5f7fb;
+
+    color: #111827;
+}
+
+
+.admin-layout .admin-menu-item.active {
+
+    background: #eef4ff;
+
+    color: #2563eb;
+
+    font-weight: 600;
+}
+
+
+.admin-layout .admin-menu-item span:first-child {
+
+    width: 22px;
+
+    text-align: center;
+
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   BOTTOM
+===================================================== */
+
+.admin-layout .admin-sidebar-bottom {
+
+    margin-top: auto;
+
+    padding: 12px;
+
+    border-top: 1px solid #f0f1f4;
+}
+
+
+.admin-layout .admin-logout {
+
+    color: #dc2626;
+}
+
+
+.admin-layout .admin-logout:hover {
+
+    background: #fef2f2;
+
+    color: #b91c1c;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.admin-layout-content {
+
+    margin-left: 250px;
+
+    min-height: 100vh;
+
+    width: calc(100% - 250px);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .admin-layout .admin-sidebar {
+
+        width: 70px;
+
+    }
+
+
+    .admin-layout .admin-logo-text,
+    .admin-layout .admin-menu-title,
+    .admin-layout .admin-menu-item span:last-child {
+
+        display: none;
+
+    }
+
+
+    .admin-layout .admin-logo {
+
+        justify-content: center;
+
+        padding: 10px;
+
+    }
+
+
+    .admin-layout .admin-menu-item {
+
+        justify-content: center;
+
+        padding: 0;
+
+    }
+
+
+    .admin-layout-content {
+
+        margin-left: 70px;
+
+        width: calc(100% - 70px);
+
+    }
+
+}
+
+.admin-layout .admin-menu-item > svg {
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+}

@@ -1,0 +1,1920 @@
+/* =========================================================
+   MY DONATIONS
+   PREMIUM DONOR DASHBOARD
+========================================================= */
+
+:root {
+  --md-bg: #F7FAFF;
+  --md-card: #ffffff;
+
+  --md-text: #171717;
+  --md-secondary: #454545;
+  --md-muted: #737373;
+
+  --md-coral: #2563EB;
+  --md-coral-dark: #1D4ED8;
+  --md-coral-light: #DBEAFE;
+
+  --md-green: #15803d;
+  --md-green-light: #ecfdf3;
+
+  --md-orange: #2563EB;
+  --md-orange-light: #EFF6FF;
+
+  --md-blue: #2563EB;
+  --md-blue-light: #DBEAFE;
+
+  --md-red: #b42318;
+  --md-red-light: #FEE2E2;
+
+  --md-border: #e5e0da;
+  --md-border-light: #E2E8F0;
+
+  --md-shadow:
+    0 10px 35px rgba(20, 20, 20, 0.055);
+
+  --md-shadow-hover:
+    0 18px 45px rgba(20, 20, 20, 0.09);
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.my-donations-page {
+  width: 100%;
+  min-height: 100vh;
+
+  box-sizing: border-box;
+
+  padding:
+    28px
+    clamp(16px, 4vw, 65px)
+    80px;
+
+  background:
+    radial-gradient(
+      circle at 90% 0%,
+      rgba(37, 99, 235, 0.05),
+      transparent 32%
+    ),
+    var(--md-bg);
+
+  color: var(--md-text);
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   HEADER / HERO SECTION
+========================================================= */
+
+.my-donations-header {
+  position: relative;
+
+  width: min(1180px, 100%);
+
+  min-height: 330px;
+
+  margin: 0 auto 42px;
+
+  padding:
+    clamp(45px, 5vw, 68px)
+    clamp(35px, 5vw, 65px);
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: flex-start;
+
+  border-radius: 30px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2456D8 0%,
+      #2563EB 55%,
+      #2868EA 100%
+    );
+
+  box-shadow:
+    0 20px 50px rgba(37, 99, 235, 0.18);
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   HERO DECORATIVE CIRCLES
+========================================================= */
+
+.my-donations-header::before {
+  content: "";
+
+  position: absolute;
+
+  width: 330px;
+  height: 330px;
+
+  right: -80px;
+  top: -150px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.my-donations-header::after {
+  content: "";
+
+  position: absolute;
+
+  width: 210px;
+  height: 210px;
+
+  right: 60px;
+  bottom: -140px;
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HEADER BADGE
+========================================================= */
+
+.my-donations-badge {
+  position: relative;
+
+  z-index: 2;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+
+  margin-bottom: 20px;
+
+  padding: 7px 14px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(255, 255, 255, 0.10);
+
+  color: #FFD6D6;
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+
+  white-space: nowrap;
+
+  text-transform: uppercase;
+
+  backdrop-filter: blur(5px);
+}
+
+
+/* =========================================================
+   HEADER CONTENT
+========================================================= */
+
+.my-donations-header-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(760px, 100%);
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.my-donations-header h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(48px, 6.2vw, 82px);
+
+  line-height: 0.96;
+
+  font-weight: 900;
+
+  letter-spacing:
+    clamp(-4px, -0.3vw, -2px);
+
+  white-space: normal;
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.my-donations-header p {
+  margin:
+    17px 0 0;
+
+  max-width: 720px;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size:
+    clamp(14px, 1.2vw, 18px);
+
+  line-height: 1.55;
+
+  white-space: normal;
+}
+
+
+/* =========================================================
+   DECORATIVE ICON
+========================================================= */
+
+.my-donations-header-content::after {
+  content: "✨";
+
+  position: absolute;
+
+  right: -390px;
+  top: 10px;
+
+  width: 120px;
+  height: 120px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+
+  border-radius: 28px;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  color: #FFD166;
+
+  font-size: 46px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   REFRESH BUTTON
+   Scoped directly to the My Donations header
+========================================================= */
+
+.my-donations-header button {
+  position: relative !important;
+
+  z-index: 10 !important;
+
+  display: inline-flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  gap: 8px !important;
+
+  width: fit-content !important;
+
+  min-width: 125px !important;
+
+  height: 44px !important;
+
+  margin-top: 25px !important;
+
+  padding: 0 20px !important;
+
+  box-sizing: border-box !important;
+
+  appearance: none !important;
+
+  -webkit-appearance: none !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+
+  border-radius: 12px !important;
+
+  outline: none !important;
+
+  background: rgba(255, 255, 255, 0.14) !important;
+
+  color: #ffffff !important;
+
+  font-family: inherit !important;
+
+  font-size: 13px !important;
+
+  font-weight: 800 !important;
+
+  line-height: 1 !important;
+
+  letter-spacing: 0.2px !important;
+
+  white-space: nowrap !important;
+
+  cursor: pointer !important;
+
+  box-shadow:
+    0 7px 20px rgba(0, 0, 0, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18) !important;
+
+  backdrop-filter: blur(8px) !important;
+
+  -webkit-backdrop-filter: blur(8px) !important;
+
+  transition:
+    all 0.2s ease !important;
+}
+
+
+/* =========================================================
+   REFRESH BUTTON HOVER
+========================================================= */
+
+.my-donations-header button:hover {
+  background: #ffffff !important;
+
+  color: #2563EB !important;
+
+  border-color: #ffffff !important;
+
+  transform: translateY(-2px) !important;
+
+  box-shadow:
+    0 12px 26px rgba(0, 0, 0, 0.18) !important;
+}
+
+
+/* =========================================================
+   REFRESH BUTTON ACTIVE
+========================================================= */
+
+.my-donations-header button:active {
+  transform: translateY(0) !important;
+
+  box-shadow:
+    0 5px 12px rgba(0, 0, 0, 0.12) !important;
+}
+
+
+/* =========================================================
+   REFRESH BUTTON FOCUS
+========================================================= */
+
+.my-donations-header button:focus,
+.my-donations-header button:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.4) !important;
+
+  outline-offset: 3px !important;
+}
+
+
+/* =========================================================
+   REFRESH BUTTON MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .my-donations-header button {
+    min-width: 120px !important;
+
+    width: fit-content !important;
+
+    height: 42px !important;
+
+    margin-top: 22px !important;
+
+    padding: 0 17px !important;
+
+    border-radius: 11px !important;
+
+    font-size: 12px !important;
+  }
+}
+
+/* =========================================================
+   DONATION LIST
+========================================================= */
+
+.my-donations-list {
+  width: min(1180px, 100%);
+
+  margin: 0 auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 22px;
+}
+
+
+/* =========================================================
+   DONATION CARD
+   FULL WIDTH - NO IMAGE COLUMN
+========================================================= */
+
+.my-donation-card {
+  position: relative;
+
+  width: 100%;
+
+  display: block;
+
+  padding:
+    clamp(24px, 3vw, 34px);
+
+  box-sizing: border-box;
+
+  border: 1px solid var(--md-border);
+
+  border-radius: 22px;
+
+  background: var(--md-card);
+
+  box-shadow: var(--md-shadow);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+/* LEFT ACCENT */
+
+.my-donation-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 4px;
+  height: 100%;
+
+  background: var(--md-coral);
+}
+
+
+/* HOVER */
+
+.my-donation-card:hover {
+  transform: translateY(-3px);
+
+  border-color: #E2E8F0;
+
+  box-shadow: var(--md-shadow-hover);
+}
+
+
+/* =========================================================
+   DONATION CONTENT
+========================================================= */
+
+.my-donation-content {
+  width: 100%;
+
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.my-donation-title {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-bottom: 16px;
+
+  border-bottom: 1px solid var(--md-border-light);
+}
+
+.my-donation-title h2 {
+  margin: 0;
+
+  min-width: 0;
+
+  color: var(--md-coral);
+
+  font-size:
+    clamp(26px, 2.6vw, 38px);
+
+  line-height: 1.1;
+
+  font-weight: 900;
+
+  letter-spacing: -0.8px;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   DONATION STATUS
+========================================================= */
+
+.donation-status {
+  flex-shrink: 0;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 30px;
+
+  padding: 6px 14px;
+
+  border-radius: 30px;
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.8px;
+
+  white-space: nowrap;
+
+  text-transform: uppercase;
+}
+
+.status-pending {
+  background: var(--md-orange-light);
+
+  color: var(--md-orange);
+}
+
+.status-accepted {
+  background: var(--md-green-light);
+
+  color: var(--md-green);
+}
+
+.status-rejected,
+.status-cancelled,
+.status-canceled {
+  background: var(--md-red-light);
+
+  color: var(--md-red);
+}
+
+.status-collected,
+.status-completed {
+  background: var(--md-blue-light);
+
+  color: var(--md-blue);
+}
+
+
+/* =========================================================
+   DONATION INFORMATION
+========================================================= */
+
+.donation-info {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  column-gap: 30px;
+
+  margin-top: 15px;
+}
+
+.donation-info p {
+  min-width: 0;
+
+  margin: 0;
+
+  padding:
+    11px 0;
+
+  color: var(--md-muted);
+
+  font-size:
+    clamp(12px, 0.9vw, 14px);
+
+  line-height: 1.55;
+
+  overflow-wrap: anywhere;
+}
+
+.donation-info p:nth-child(even) {
+  padding-left: 20px;
+
+  border-left: 1px solid var(--md-border-light);
+}
+
+.donation-info p:first-child {
+  grid-column: 1 / -1;
+
+  padding:
+    5px 0 13px;
+
+  border-left: none;
+
+  border-bottom: 1px solid var(--md-border-light);
+}
+
+.donation-info strong {
+  color: var(--md-text);
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   DONATION DATE
+========================================================= */
+
+.donation-date {
+  margin: 10px 0 0;
+
+  color: #999999;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   PICKUP DETAILS
+========================================================= */
+
+.pickup-details {
+  position: relative;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  margin-top: 20px;
+
+  padding:
+    clamp(18px, 2vw, 24px);
+
+  border: 1px solid #eadeda;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #F7FAFF,
+      #ffffff
+    );
+
+  overflow: hidden;
+}
+
+.pickup-details::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 3px;
+  height: 100%;
+
+  background: var(--md-coral);
+}
+
+
+/* =========================================================
+   PICKUP TITLE
+========================================================= */
+
+.pickup-details h3,
+.pickup-title {
+  margin: 0 0 8px;
+
+  color: var(--md-text);
+
+  font-size:
+    clamp(18px, 1.5vw, 22px);
+
+  line-height: 1.2;
+
+  font-weight: 850;
+}
+
+
+/* =========================================================
+   PICKUP STATUS
+========================================================= */
+
+.pickup-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  width: fit-content;
+
+  margin-bottom: 10px;
+
+  padding: 5px 11px;
+
+  border-radius: 20px;
+
+  background: var(--md-green-light);
+
+  color: var(--md-green);
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.7px;
+
+  text-transform: uppercase;
+}
+
+.pickup-status.cancelled,
+.pickup-status.canceled {
+  background: var(--md-red-light);
+
+  color: var(--md-red);
+}
+
+.pickup-status.pending {
+  background: var(--md-orange-light);
+
+  color: var(--md-orange);
+}
+
+
+/* =========================================================
+   PICKUP INFO
+========================================================= */
+
+.pickup-info {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.5fr)
+    minmax(200px, 0.8fr);
+
+  column-gap: 25px;
+}
+
+.pickup-info p {
+  min-width: 0;
+
+  margin: 0;
+
+  padding:
+    8px 0;
+
+  color: var(--md-muted);
+
+  font-size:
+    clamp(11px, 0.85vw, 13px);
+
+  line-height: 1.6;
+
+  overflow-wrap: anywhere;
+}
+
+.pickup-info p + p {
+  padding-left: 20px;
+
+  border-left: 1px solid var(--md-border-light);
+}
+
+.pickup-info strong {
+  color: var(--md-text);
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   PICKUP LOCATION
+========================================================= */
+
+.pickup-location {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 7px;
+
+  margin-top: 8px;
+
+  color: var(--md-muted);
+
+  font-size:
+    clamp(11px, 0.85vw, 13px);
+
+  line-height: 1.55;
+
+  overflow-wrap: anywhere;
+}
+
+.pickup-location strong {
+  color: var(--md-text);
+}
+
+
+/* =========================================================
+   PICKUP DATE / TIME
+========================================================= */
+
+.pickup-date,
+.pickup-time {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 8px;
+
+  color: var(--md-muted);
+
+  font-size:
+    clamp(11px, 0.85vw, 13px);
+
+  line-height: 1.5;
+}
+
+.pickup-date strong,
+.pickup-time strong {
+  color: var(--md-text);
+}
+
+
+/* =========================================================
+   PICKUP ACTIONS
+========================================================= */
+
+.pickup-actions {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  margin-top: 15px;
+
+  padding-top: 13px;
+
+  border-top: 1px solid var(--md-border-light);
+}
+
+.pickup-actions button {
+  min-height: 36px;
+
+  padding: 8px 14px;
+
+  border: 1px solid var(--md-border);
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: var(--md-text);
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.pickup-actions button:hover {
+  border-color: var(--md-coral);
+
+  background: var(--md-coral-light);
+
+  color: var(--md-coral);
+
+  transform: translateY(-1px);
+}
+
+
+/* RESCHEDULE */
+
+.pickup-actions .reschedule-pickup,
+.pickup-actions .reschedule-button {
+  background: var(--md-coral);
+
+  border-color: var(--md-coral);
+
+  color: #ffffff;
+}
+
+.pickup-actions .reschedule-pickup:hover,
+.pickup-actions .reschedule-button:hover {
+  background: var(--md-coral-dark);
+
+  color: #ffffff;
+}
+
+
+/* CANCEL */
+
+.pickup-actions .cancel-pickup,
+.pickup-actions .cancel-button {
+  background: var(--md-red-light);
+
+  border-color: #E2E8F0;
+
+  color: var(--md-red);
+}
+
+.pickup-actions .cancel-pickup:hover,
+.pickup-actions .cancel-button:hover {
+  background: var(--md-red);
+
+  border-color: var(--md-red);
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   STATUS TIMELINE
+========================================================= */
+
+.status-timeline {
+  width: 100%;
+
+  min-height: 95px;
+
+  box-sizing: border-box;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: space-between !important;
+
+  margin-top: 20px;
+
+  padding:
+    15px 30px;
+
+  border: 1px solid var(--md-border);
+
+  border-radius: 15px;
+
+  background: #ffffff !important;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   TIMELINE STEP
+========================================================= */
+
+.status-timeline .timeline-step {
+  position: relative;
+
+  width: 85px !important;
+
+  min-width: 85px !important;
+
+  max-width: 85px !important;
+
+  height: auto !important;
+
+  display: flex !important;
+
+  flex-direction: column !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  gap: 7px !important;
+
+  margin: 0 !important;
+
+  padding: 0 !important;
+
+  background: transparent !important;
+
+  border: none !important;
+
+  border-radius: 0 !important;
+
+  box-shadow: none !important;
+
+  color: #94a3b8 !important;
+
+  text-align: center !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   TIMELINE CIRCLE
+========================================================= */
+
+.status-timeline .timeline-step span {
+  width: 34px !important;
+
+  min-width: 34px !important;
+
+  max-width: 34px !important;
+
+  height: 34px !important;
+
+  min-height: 34px !important;
+
+  max-height: 34px !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  flex-shrink: 0 !important;
+
+  box-sizing: border-box !important;
+
+  margin: 0 !important;
+
+  padding: 0 !important;
+
+  border: none !important;
+
+  border-radius: 50% !important;
+
+  background: #E2E8F0 !important;
+
+  color: #64748b !important;
+
+  font-family: inherit !important;
+
+  font-size: 12px !important;
+
+  font-weight: 800 !important;
+
+  line-height: 1 !important;
+
+  box-shadow: none !important;
+
+  transform: none !important;
+}
+
+
+/* =========================================================
+   TIMELINE LABEL
+========================================================= */
+
+.status-timeline .timeline-step small {
+  display: block !important;
+
+  width: auto !important;
+
+  height: auto !important;
+
+  margin: 0 !important;
+
+  padding: 0 !important;
+
+  background: transparent !important;
+
+  border: none !important;
+
+  color: #94a3b8 !important;
+
+  font-family: inherit !important;
+
+  font-size: 11px !important;
+
+  font-weight: 800 !important;
+
+  line-height: 1.2 !important;
+
+  white-space: nowrap !important;
+
+  text-align: center !important;
+}
+
+
+/* =========================================================
+   ACTIVE TIMELINE STEP
+========================================================= */
+
+.status-timeline .timeline-step.active {
+  background: transparent !important;
+
+  color: var(--md-coral) !important;
+}
+
+.status-timeline .timeline-step.active span {
+  background: var(--md-coral) !important;
+
+  color: #ffffff !important;
+
+  border-radius: 50% !important;
+
+  box-shadow:
+    0 5px 13px rgba(37, 99, 235, 0.22) !important;
+}
+
+.status-timeline .timeline-step.active small {
+  color: var(--md-coral) !important;
+}
+
+
+/* =========================================================
+   TIMELINE LINE
+========================================================= */
+
+.status-timeline .timeline-line {
+  flex: 1 1 auto !important;
+
+  width: auto !important;
+
+  min-width: 50px !important;
+
+  height: 2px !important;
+
+  min-height: 2px !important;
+
+  max-height: 2px !important;
+
+  margin:
+    0 18px 21px !important;
+
+  padding: 0 !important;
+
+  background: #E2E8F0 !important;
+
+  border: none !important;
+
+  border-radius: 10px !important;
+
+  box-sizing: border-box !important;
+}
+
+.status-timeline .timeline-line.active-line {
+  background: var(--md-coral) !important;
+}
+
+
+/* =========================================================
+   REJECTED TIMELINE
+========================================================= */
+
+.status-timeline.rejected-timeline {
+  background: #ffffff !important;
+}
+
+.status-timeline.rejected-timeline .rejected-step span {
+  width: 34px !important;
+
+  min-width: 34px !important;
+
+  height: 34px !important;
+
+  min-height: 34px !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  background: #dc2626 !important;
+
+  color: #ffffff !important;
+
+  border: none !important;
+
+  border-radius: 50% !important;
+
+  font-size: 14px !important;
+
+  font-weight: 900 !important;
+}
+
+.status-timeline.rejected-timeline .rejected-step small {
+  color: #dc2626 !important;
+
+  background: transparent !important;
+}
+
+
+/* =========================================================
+   DONATION ACTIONS
+========================================================= */
+
+.donation-actions {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  margin-top: 17px;
+}
+
+.edit-donation-button,
+.delete-donation-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 6px;
+
+  min-height: 38px;
+
+  padding: 8px 15px;
+
+  border-radius: 9px;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.edit-donation-button {
+  border: 1px solid var(--md-coral);
+
+  background: var(--md-coral);
+
+  color: #ffffff;
+}
+
+.edit-donation-button:hover {
+  background: var(--md-coral-dark);
+
+  transform: translateY(-1px);
+}
+
+.delete-donation-button {
+  border: 1px solid #E2E8F0;
+
+  background: var(--md-red-light);
+
+  color: var(--md-red);
+}
+
+.delete-donation-button:hover {
+  border-color: var(--md-red);
+
+  background: var(--md-red);
+
+  color: #ffffff;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-donations {
+  width: min(620px, 100%);
+
+  margin: 30px auto;
+
+  padding:
+    clamp(45px, 6vw, 70px)
+    25px;
+
+  box-sizing: border-box;
+
+  border: 1px solid var(--md-border);
+
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  text-align: center;
+
+  box-shadow: var(--md-shadow);
+}
+
+.empty-icon {
+  width: 68px;
+  height: 68px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 17px;
+
+  border-radius: 20px;
+
+  background: var(--md-coral-light);
+
+  font-size: 28px;
+}
+
+.empty-donations h2 {
+  margin: 0;
+
+  color: var(--md-text);
+
+  font-size: 21px;
+
+  font-weight: 800;
+}
+
+.empty-donations p {
+  margin: 8px 0 0;
+
+  color: var(--md-muted);
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.my-donations-loading {
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 13px;
+
+  background: var(--md-bg);
+
+  color: var(--md-muted);
+}
+
+.my-donations-loading::before {
+  content: "";
+
+  width: 32px;
+  height: 32px;
+
+  border: 3px solid #e5e2dd;
+
+  border-top-color: var(--md-coral);
+
+  border-radius: 50%;
+
+  animation:
+    donationsSpin 0.7s linear infinite;
+}
+
+@keyframes donationsSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .my-donations-page {
+    padding:
+      25px
+      20px
+      60px;
+  }
+
+  .my-donations-header {
+    min-height: 320px;
+
+    padding:
+      42px 38px;
+  }
+
+  .my-donations-header h1 {
+    font-size:
+      clamp(46px, 8vw, 68px);
+  }
+
+  .my-donations-header-content::after {
+    right: -300px;
+  }
+
+  .donation-info {
+    grid-template-columns: 1fr;
+  }
+
+  .donation-info p:nth-child(even) {
+    padding-left: 0;
+
+    border-left: none;
+  }
+
+  .pickup-info {
+    grid-template-columns: 1fr;
+  }
+
+  .pickup-info p + p {
+    padding-left: 0;
+
+    border-left: none;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .my-donations-page {
+    padding:
+      18px
+      14px
+      50px;
+  }
+
+
+  /* HERO */
+
+  .my-donations-header {
+    width: 100%;
+
+    min-height: 370px;
+
+    margin-bottom: 28px;
+
+    padding:
+      38px 25px;
+
+    border-radius: 24px;
+
+    justify-content: center;
+  }
+
+  .my-donations-header::before {
+    width: 230px;
+
+    height: 230px;
+
+    right: -100px;
+
+    top: -100px;
+  }
+
+  .my-donations-header::after {
+    width: 150px;
+
+    height: 150px;
+
+    right: -20px;
+
+    bottom: -100px;
+  }
+
+  .my-donations-badge {
+    margin-bottom: 15px;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .my-donations-header h1 {
+    font-size:
+      clamp(42px, 12vw, 58px);
+
+    line-height: 0.94;
+
+    letter-spacing: -2.5px;
+  }
+
+  .my-donations-header p {
+    margin-top: 15px;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+  }
+
+  .my-donations-header-content::after {
+    display: none;
+  }
+
+  .refresh-button,
+  .refresh-btn,
+  .my-donations-refresh {
+    min-width: 110px;
+
+    height: 40px;
+
+    margin-top: 22px;
+
+    font-size: 12px;
+  }
+
+
+  /* CARD */
+
+  .my-donation-card {
+    padding: 18px;
+
+    border-radius: 18px;
+  }
+
+
+  /* TITLE */
+
+  .my-donation-title {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+  .my-donation-title h2 {
+    font-size: 27px;
+  }
+
+
+  /* INFO */
+
+  .donation-info {
+    grid-template-columns: 1fr;
+  }
+
+  .donation-info p {
+    padding:
+      9px 0;
+  }
+
+  .donation-info p:nth-child(even) {
+    padding-left: 0;
+
+    border-left: none;
+  }
+
+  .donation-info p:first-child {
+    grid-column: auto;
+  }
+
+
+  /* PICKUP */
+
+  .pickup-details {
+    padding: 16px;
+  }
+
+  .pickup-info {
+    grid-template-columns: 1fr;
+  }
+
+  .pickup-info p + p {
+    padding-left: 0;
+
+    border-left: none;
+  }
+
+
+  /* TIMELINE */
+
+  .status-timeline {
+    width: 100% !important;
+
+    min-height: 86px;
+
+    padding:
+      12px 8px !important;
+  }
+
+  .status-timeline .timeline-step {
+    width: 60px !important;
+
+    min-width: 60px !important;
+
+    max-width: 60px !important;
+  }
+
+  .status-timeline .timeline-step span {
+    width: 29px !important;
+
+    min-width: 29px !important;
+
+    height: 29px !important;
+
+    min-height: 29px !important;
+  }
+
+  .status-timeline .timeline-step small {
+    font-size: 9px !important;
+  }
+
+  .status-timeline .timeline-line {
+    min-width: 20px !important;
+
+    margin:
+      0 5px 19px !important;
+  }
+
+
+  /* ACTIONS */
+
+  .donation-actions {
+    width: 100%;
+  }
+
+  .edit-donation-button,
+  .delete-donation-button {
+    flex: 1;
+
+    min-height: 40px;
+  }
+
+  .pickup-actions {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .pickup-actions button {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .my-donations-page {
+    padding-left: 10px;
+
+    padding-right: 10px;
+  }
+
+  .my-donations-header {
+    min-height: 350px;
+
+    padding:
+      32px 20px;
+  }
+
+  .my-donations-header h1 {
+    font-size: 40px;
+  }
+
+  .my-donation-title h2 {
+    font-size: 23px;
+  }
+
+  .my-donation-card {
+    padding: 14px;
+  }
+
+  .status-timeline {
+    padding:
+      10px 4px !important;
+  }
+
+  .status-timeline .timeline-step {
+    width: 50px !important;
+
+    min-width: 50px !important;
+
+    max-width: 50px !important;
+  }
+
+  .status-timeline .timeline-step span {
+    width: 27px !important;
+
+    min-width: 27px !important;
+
+    height: 27px !important;
+
+    min-height: 27px !important;
+  }
+
+  .status-timeline .timeline-step small {
+    font-size: 8px !important;
+  }
+
+  .status-timeline .timeline-line {
+    min-width: 15px !important;
+
+    margin-left: 3px !important;
+
+    margin-right: 3px !important;
+  }
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-theme {
+  --md-bg: #08111F;
+  --md-card: #142B43;
+
+  --md-text: #FFF5F8;
+  --md-muted: #9E8C93;
+
+  --md-border: #403238;
+  --md-border-light: #403238;
+
+  --md-coral-light: #17345A;
+  --md-green-light: #122235;
+  --md-orange-light: #172B43;
+  --md-blue-light: #17345A;
+  --md-red-light: #3A2025;
+}
+
+body.dark-theme .my-donations-page {
+  background: var(--md-bg);
+}
+
+body.dark-theme .my-donations-header {
+  background:
+    linear-gradient(
+      135deg,
+      #173F9E,
+      #1D4ED8
+    );
+}
+
+body.dark-theme .my-donation-card,
+body.dark-theme .empty-donations,
+body.dark-theme .status-timeline {
+  background: var(--md-card) !important;
+
+  border-color: var(--md-border);
+}
+
+body.dark-theme .pickup-details {
+  background:
+    linear-gradient(
+      135deg,
+      #281b1b,
+      var(--md-card)
+    );
+
+  border-color: var(--md-border);
+}
+
+body.dark-theme .my-donation-title,
+body.dark-theme .donation-info p:first-child,
+body.dark-theme .pickup-actions {
+  border-color: var(--md-border);
+}
+
+
+/* DARK TIMELINE */
+
+body.dark-theme .status-timeline .timeline-step span {
+  background: #403238 !important;
+
+  color: #aaa !important;
+}
+
+body.dark-theme .status-timeline .timeline-step.active span {
+  background: var(--md-coral) !important;
+
+  color: #ffffff !important;
+}
+
+body.dark-theme .status-timeline .timeline-step small {
+  color: #aaa !important;
+}
+
+body.dark-theme .status-timeline .timeline-step.active small {
+  color: var(--md-coral) !important;
+}
+
+body.dark-theme .status-timeline .timeline-line {
+  background: #403238 !important;
+}
+
+body.dark-theme .status-timeline .timeline-line.active-line {
+  background: var(--md-coral) !important;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.refresh-button:focus-visible,
+.refresh-btn:focus-visible,
+.my-donations-refresh:focus-visible,
+.pickup-actions button:focus-visible,
+.edit-donation-button:focus-visible,
+.delete-donation-button:focus-visible {
+  outline:
+    3px solid rgba(37, 99, 235, 0.25);
+
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+}

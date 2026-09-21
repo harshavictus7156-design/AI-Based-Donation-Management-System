@@ -1,0 +1,17 @@
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+venv/
+.venv/
+
+# Django generated files
+media/
+
+# IDE
+.vscode/
+.idea/

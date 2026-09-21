@@ -1,0 +1,550 @@
+/* ============================================================
+   EDIT DONATION
+   Pickup Details
+   ============================================================ */
+
+.edit-donation-page {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 42px 32px 64px;
+  box-sizing: border-box;
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.edit-donation-header {
+  margin-bottom: 30px;
+}
+
+.edit-donation-badge {
+  display: inline-block;
+  margin-bottom: 9px;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.edit-donation-header h1 {
+  margin: 0 0 10px;
+
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 750;
+}
+
+.edit-donation-header p {
+  margin: 0;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   MAIN FORM
+   ============================================================ */
+
+.edit-donation-form {
+  width: 100%;
+}
+
+.edit-donation-card {
+  width: 100%;
+  padding: 30px;
+  margin: 0;
+
+  box-sizing: border-box;
+
+  border-radius: 18px;
+}
+
+
+/* ============================================================
+   CARD HEADER
+   ============================================================ */
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 30px;
+}
+
+.heading-icon {
+  width: 48px;
+  height: 48px;
+
+  flex: 0 0 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  font-size: 22px;
+}
+
+.card-heading span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.card-heading h2 {
+  margin: 0;
+
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+
+/* ============================================================
+   FORM GROUP
+   ============================================================ */
+
+.form-group {
+  width: 100%;
+  min-width: 0;
+
+  margin: 0 0 25px;
+
+  box-sizing: border-box;
+}
+
+.form-group label {
+  display: block;
+
+  margin: 0 0 9px;
+
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+
+/* ============================================================
+   PICKUP ADDRESS
+   ============================================================ */
+
+.pickup-address-input {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 52px;
+
+  padding: 0 15px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(100, 80, 70, 0.22);
+  border-radius: 11px;
+
+  overflow: hidden;
+}
+
+.pickup-field-icon {
+  flex: 0 0 22px;
+
+  width: 22px;
+  height: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 11px;
+
+  font-size: 17px;
+  line-height: 1;
+}
+
+.pickup-address-input input {
+  flex: 1 1 auto;
+
+  width: 100%;
+  min-width: 0;
+  height: 50px;
+
+  padding: 0;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  font: inherit;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+
+/* ============================================================
+   DATE + TIME GRID
+   ============================================================ */
+
+.pickup-date-time-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 22px;
+
+  width: 100%;
+
+  margin: 0;
+
+  box-sizing: border-box;
+}
+
+.pickup-field {
+  min-width: 0;
+  margin-bottom: 25px;
+}
+
+
+/* ============================================================
+   DATE INPUT
+   ============================================================ */
+
+.pickup-date-input,
+.pickup-time-input {
+  width: 100%;
+  height: 52px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(100, 80, 70, 0.22);
+  border-radius: 11px;
+
+  overflow: hidden;
+}
+
+.pickup-date-input input,
+.pickup-time-input input {
+  display: block;
+
+  width: 100%;
+  min-width: 0;
+  height: 50px;
+
+  padding: 0 13px;
+
+  margin: 0;
+
+  box-sizing: border-box;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  font: inherit;
+  font-size: 15px;
+  line-height: 1.4;
+
+  cursor: pointer;
+}
+
+
+/* ------------------------------------------------------------
+   Native Date/Time Controls
+   ------------------------------------------------------------ */
+
+.pickup-date-input input::-webkit-datetime-edit,
+.pickup-time-input input::-webkit-datetime-edit {
+  padding: 0;
+}
+
+.pickup-date-input input::-webkit-datetime-edit-fields-wrapper,
+.pickup-time-input input::-webkit-datetime-edit-fields-wrapper {
+  padding: 0;
+}
+
+.pickup-date-input input::-webkit-calendar-picker-indicator,
+.pickup-time-input input::-webkit-calendar-picker-indicator {
+  width: 18px;
+  height: 18px;
+
+  margin-left: 8px;
+
+  cursor: pointer;
+}
+
+
+/* ============================================================
+   FOCUS STATES
+   ============================================================ */
+
+.pickup-address-input:focus-within,
+.pickup-date-input:focus-within,
+.pickup-time-input:focus-within {
+  border-color: rgba(127, 29, 29, 0.55);
+
+  box-shadow:
+    0 0 0 3px rgba(127, 29, 29, 0.08);
+}
+
+
+/* ============================================================
+   PICKUP NOTES
+   ============================================================ */
+
+.pickup-notes-group {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.pickup-notes-group textarea {
+  display: block;
+
+  width: 100%;
+  min-height: 120px;
+
+  padding: 14px 15px;
+
+  box-sizing: border-box;
+
+  resize: vertical;
+
+  border: 1px solid rgba(100, 80, 70, 0.22);
+  border-radius: 11px;
+
+  outline: 0;
+
+  background: transparent;
+
+  font: inherit;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.pickup-notes-group textarea:focus {
+  border-color: rgba(127, 29, 29, 0.55);
+
+  box-shadow:
+    0 0 0 3px rgba(127, 29, 29, 0.08);
+}
+
+
+/* ============================================================
+   INFORMATION NOTE
+   ============================================================ */
+
+.edit-pickup-note {
+  margin-top: 4px;
+
+  padding: 16px 18px;
+
+  border-radius: 12px;
+
+  line-height: 1.5;
+}
+
+.edit-pickup-note strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 14px;
+}
+
+.edit-pickup-note p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+
+/* ============================================================
+   ACTION BUTTONS
+   ============================================================ */
+
+.edit-donation-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 14px;
+
+  margin-top: 24px;
+}
+
+.edit-cancel-button,
+.edit-save-button,
+.edit-back-button {
+  min-height: 48px;
+
+  padding: 0 22px;
+
+  border-radius: 10px;
+  border: 0;
+
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    opacity 0.18s ease;
+}
+
+.edit-cancel-button:hover,
+.edit-save-button:hover,
+.edit-back-button:hover {
+  transform: translateY(-1px);
+}
+
+.edit-cancel-button:disabled,
+.edit-save-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+/* ============================================================
+   LOADING STATE
+   ============================================================ */
+
+.edit-donation-loading {
+  width: 100%;
+  max-width: 620px;
+
+  margin: 90px auto;
+  padding: 38px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+
+  border-radius: 18px;
+}
+
+.loading-icon {
+  font-size: 34px;
+  margin-bottom: 14px;
+}
+
+.edit-donation-loading h2 {
+  margin: 0 0 8px;
+
+  font-size: 22px;
+}
+
+.edit-donation-loading p {
+  margin: 0;
+
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   ERROR STATE
+   ============================================================ */
+
+.edit-donation-error {
+  width: 100%;
+  max-width: 620px;
+
+  margin: 80px auto;
+  padding: 36px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+
+  border-radius: 18px;
+}
+
+.edit-donation-error h2 {
+  margin: 14px 0 9px;
+
+  font-size: 22px;
+}
+
+.edit-donation-error p {
+  margin: 0;
+
+  line-height: 1.6;
+}
+
+.error-icon {
+  font-size: 34px;
+}
+
+.inline-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  max-width: none;
+
+  margin: 0 0 20px;
+  padding: 14px 16px;
+
+  text-align: left;
+
+  border-radius: 11px;
+}
+
+.inline-error p {
+  margin: 0;
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+  .edit-donation-page {
+    padding: 28px 18px 48px;
+  }
+
+  .edit-donation-header h1 {
+    font-size: 28px;
+  }
+
+  .edit-donation-card {
+    padding: 22px 18px;
+  }
+
+  .pickup-date-time-grid {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .pickup-field {
+    margin-bottom: 22px;
+  }
+
+  .edit-donation-actions {
+    flex-direction: column-reverse;
+
+    align-items: stretch;
+  }
+
+  .edit-cancel-button,
+  .edit-save-button {
+    width: 100%;
+  }
+}

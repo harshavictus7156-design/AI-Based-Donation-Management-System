@@ -1,0 +1,98 @@
+/* NGO sidebar matched to Donor visual language */
+.ngo-sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 1000;
+  width: 258px;
+  display: flex;
+  flex-direction: column;
+  padding: 22px 14px 16px;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  color: #17211F;
+  border-right: 1px solid #DDE8E4;
+  box-shadow: 10px 0 30px rgba(15,23,42,.045);
+}
+
+.ngo-sidebar-brand { display:flex; align-items:center; gap:10px; padding:3px 9px 20px; cursor:pointer; border-bottom:1px solid #E5EEEB; }
+.ngo-sidebar-brand-mark { width:39px; height:39px; display:grid; place-items:center; border-radius:12px; background:linear-gradient(135deg,#115E59,#14B8A6); color:#fff; font-size:12px; font-weight:900; box-shadow:0 6px 15px rgba(15,118,110,.16); }
+.ngo-sidebar-brand strong { display:block; color:#17211F; font-size:14px; font-weight:800; }
+.ngo-sidebar-brand span { display:block; margin-top:3px; color:#879590; font-size:9px; font-weight:600; }
+.ngo-sidebar-user { display:flex; align-items:center; gap:10px; padding:12px 10px; margin:14px 0 17px; border:1px solid #DDE8E4; border-radius:14px; background:#F8FBF9; }
+.ngo-sidebar-avatar { width:38px; height:38px; display:grid; place-items:center; border-radius:12px; background:#CCFBF1; color:#115E59; font-weight:800; flex:0 0 38px; }
+.ngo-sidebar-user strong { display:block; color:#17211F; font-size:11px; font-weight:700; }
+.ngo-sidebar-user span { display:block; margin-top:3px; color:#879590; font-size:9px; }
+.ngo-sidebar-nav { flex:1; overflow-y:auto; }
+.ngo-sidebar-nav p { margin:0 9px 7px; color:#879590; font-size:9px; font-weight:800; letter-spacing:1.4px; }
+.ngo-sidebar-nav p:not(:first-child) { margin-top:20px; }
+.ngo-sidebar-link { position:relative; display:flex; align-items:center; gap:11px; min-height:42px; padding:0 11px; margin:3px 0; border-radius:10px; color:#5F6F6B; text-decoration:none; font-size:11px; font-weight:600; transition:.18s ease; }
+.ngo-sidebar-link svg { width:17px; height:17px; flex:0 0 17px; }
+.ngo-sidebar-link:hover { color:#115E59; background:#E6F7F4; }
+.ngo-sidebar-link.active { color:#115E59; background:#CCFBF1; font-weight:750; }
+.ngo-sidebar-link.active:before { content:""; position:absolute; left:0; width:3px; height:19px; border-radius:0 5px 5px 0; background:#14B8A6; }
+.ngo-sidebar-bottom { margin-top:12px; padding-top:10px; border-top:1px solid #E5EEEB; }
+.ngo-theme-row { display:flex; align-items:center; justify-content:space-between; padding:7px 10px; margin-bottom:5px; border-radius:10px; background:#F8FBF9; }
+.ngo-theme-row span { display:flex; align-items:center; gap:8px; color:#5F6F6B; font-size:10px; }
+.ngo-theme-row svg { width:15px; }
+.ngo-sidebar-bottom button { width:100%; min-height:40px; display:flex; align-items:center; gap:11px; padding:0 11px; border:0; border-radius:10px; background:transparent; color:#5F6F6B; font:inherit; font-size:11px; font-weight:600; cursor:pointer; text-align:left; }
+.ngo-sidebar-bottom button:hover { color:#115E59; background:#E6F7F4; }
+
+/* Dedicated dark NGO sidebar */
+html[data-theme="dark"] .ngo-sidebar, body.dark-theme .ngo-sidebar { background:#0E1A18; color:#F1F8F6; border-right-color:#29423E; box-shadow:10px 0 30px rgba(0,0,0,.22); }
+html[data-theme="dark"] .ngo-sidebar-brand, body.dark-theme .ngo-sidebar-brand { border-bottom-color:#29423E; }
+html[data-theme="dark"] .ngo-sidebar-brand strong, body.dark-theme .ngo-sidebar-brand strong { color:#F1F8F6; }
+html[data-theme="dark"] .ngo-sidebar-brand span, body.dark-theme .ngo-sidebar-brand span { color:#819590; }
+html[data-theme="dark"] .ngo-sidebar-user, body.dark-theme .ngo-sidebar-user { background:#142421; border-color:#29423E; }
+html[data-theme="dark"] .ngo-sidebar-user strong, body.dark-theme .ngo-sidebar-user strong { color:#F1F8F6; }
+html[data-theme="dark"] .ngo-sidebar-user span, body.dark-theme .ngo-sidebar-user span { color:#819590; }
+html[data-theme="dark"] .ngo-sidebar-avatar, body.dark-theme .ngo-sidebar-avatar { background:#153B35; color:#5EEAD4; }
+html[data-theme="dark"] .ngo-sidebar-nav p, body.dark-theme .ngo-sidebar-nav p { color:#819590; }
+html[data-theme="dark"] .ngo-sidebar-link, body.dark-theme .ngo-sidebar-link { color:#B8C9C5; }
+html[data-theme="dark"] .ngo-sidebar-link:hover, body.dark-theme .ngo-sidebar-link:hover { color:#F1F8F6; background:#18302C; }
+html[data-theme="dark"] .ngo-sidebar-link.active, body.dark-theme .ngo-sidebar-link.active { color:#A7F3D0; background:linear-gradient(135deg,#153B35,#183F39); box-shadow:inset 3px 0 0 #2DD4BF; }
+html[data-theme="dark"] .ngo-sidebar-link.active:before, body.dark-theme .ngo-sidebar-link.active:before { background:#2DD4BF; }
+html[data-theme="dark"] .ngo-sidebar-bottom, body.dark-theme .ngo-sidebar-bottom { border-top-color:#29423E; }
+html[data-theme="dark"] .ngo-theme-row, body.dark-theme .ngo-theme-row { background:#142421; }
+html[data-theme="dark"] .ngo-theme-row span, body.dark-theme .ngo-theme-row span { color:#B8C9C5; }
+html[data-theme="dark"] .ngo-sidebar-bottom button, body.dark-theme .ngo-sidebar-bottom button { color:#B8C9C5; }
+html[data-theme="dark"] .ngo-sidebar-bottom button:hover, body.dark-theme .ngo-sidebar-bottom button:hover { color:#F1F8F6; background:#18302C; }
+
+@media(max-width:850px){
+  .ngo-sidebar{width:278px;max-width:86vw;padding:22px 16px 18px;transform:translateX(-105%);transition:transform .24s ease}
+  .ngo-sidebar.mobile-open{transform:translateX(0)}
+}
+
+/* NGO active navigation matches Donor blue accent */
+.ngo-sidebar-link.active {
+  color: #1D4ED8 !important;
+  background: #DBEAFE !important;
+}
+.ngo-sidebar-link.active:before {
+  background: #2563EB !important;
+}
+
+html[data-theme="dark"] .ngo-sidebar-link.active,
+body.dark-theme .ngo-sidebar-link.active {
+  color: #BFDBFE !important;
+  background: rgba(37,99,235,.22) !important;
+  box-shadow: inset 3px 0 0 #60A5FA;
+}
+html[data-theme="dark"] .ngo-sidebar-link.active:before,
+body.dark-theme .ngo-sidebar-link.active:before {
+  background: #60A5FA !important;
+}
+
+.ngo-sidebar-badge {
+  min-width: 18px;
+  height: 18px;
+  margin-left: auto;
+  padding: 0 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background: #2563EB;
+  color: #FFFFFF;
+  font-size: 9px;
+  font-weight: 800;
+}

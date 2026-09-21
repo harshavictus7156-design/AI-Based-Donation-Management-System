@@ -1,0 +1,186 @@
+/* =========================================================
+   GLOBAL DESIGN SYSTEM - PREMIUM VIOLET GRADIENT
+   CSS/UI only. Application logic is intentionally untouched.
+========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg-primary: #F7FAFF;
+  --bg-secondary: #EFF6FF;
+  --bg-card: #FFFFFF;
+  --surface-soft: #DBEAFE;
+  --surface-warm: #EFF6FF;
+
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+
+  --border-color: #E2E8F0;
+  --input-bg: #FFFFFF;
+  --input-text: #0F172A;
+
+  --primary: #2563EB;
+  --primary-hover: #1D4ED8;
+  --primary-light: #DBEAFE;
+  --accent: #38BDF8;
+  --accent-hover: #2563EB;
+
+  --gradient-primary: linear-gradient(135deg, #1D4ED8 0%, #38BDF8 100%);
+  --gradient-soft: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+
+  --danger: #DC2626;
+  --success: #16A34A;
+  --warning: #D97706;
+  --info: #2563EB;
+
+  --shadow-sm: 0 2px 10px rgba(37, 99, 235, .05);
+  --shadow: 0 10px 28px rgba(37, 99, 235, .08);
+  --shadow-lg: 0 18px 44px rgba(37, 99, 235, .12);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --transition: 180ms ease;
+
+  --font-ui: 'Manrope', ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html[data-theme="dark"], body.dark-theme, html.dark-mode {
+  --bg-primary: #08111F;
+  --bg-secondary: #18121F;
+  --bg-card: #122235;
+  --surface-soft: #172B43;
+  --surface-warm: #261C31;
+
+  --text-primary: #FAF7FF;
+  --text-secondary: #C4B8CF;
+  --text-muted: #9B8EA8;
+
+  --border-color: #34263F;
+  --input-bg: #172B43;
+  --input-text: #FAF7FF;
+
+  --primary: #60A5FA;
+  --primary-hover: #93C5FD;
+  --primary-light: #3A2750;
+  --accent: #38BDF8;
+  --accent-hover: #60A5FA;
+
+  --gradient-primary: linear-gradient(135deg, #2563EB 0%, #60A5FA 100%);
+  --gradient-soft: linear-gradient(135deg, #172B43 0%, #20364F 100%);
+
+  --danger: #F87171;
+  --success: #4ADE80;
+  --warning: #FBBF24;
+  --info: #60A5FA;
+
+  --shadow-sm: 0 2px 10px rgba(0,0,0,.22);
+  --shadow: 0 12px 30px rgba(0,0,0,.28);
+  --shadow-lg: 0 20px 46px rgba(0,0,0,.38);
+}
+
+html, body, #root { min-height: 100%; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color .25s ease, color .25s ease;
+}
+
+button, input, select, textarea { font: inherit; font-family: var(--font-ui); }
+
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-ui); color: var(--text-primary); }
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--primary) 24%, transparent);
+  outline-offset: 2px;
+}
+
+.card, .donate-card, .profile-card, .dashboard-card, .form-card,
+.dashboard-stat-card, .stat-card, .ngo-item-card, .ngo-form-card,
+.ngo-impact-card, .ngo-settings-card, .ngo-notice, .donor-card,
+.donation-card, .notification-card, .ngo-card, .ngo-details-header,
+.ngo-details-section, .ngo-info-card, .login-card, .feature-card,
+.how-it-works, .my-donation-card, .empty-donations {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+::selection { background: var(--primary-light); color: var(--text-primary); }
+
+/* Shared interactive polish */
+button, a, input, select, textarea { transition: color var(--transition), background-color var(--transition), border-color var(--transition), box-shadow var(--transition), transform var(--transition); }
+
+input, select, textarea {
+  background: var(--input-bg);
+  color: var(--input-text);
+  border-color: var(--border-color);
+}
+
+input::placeholder, textarea::placeholder { color: var(--text-muted); }
+
+/* Restrained gradient utilities used by existing components */
+.gradient-primary { background: var(--gradient-primary); color: #fff; }
+.gradient-soft { background: var(--gradient-soft); }
+
+/* Final cross-application visual normalization */
+body, body * { font-family: var(--font-ui); }
+
+button, [role="button"] { font-weight: 600; }
+
+/* Existing brand/CTA surfaces inherit the new identity */
+.btn-primary, .primary-btn, .donate-btn, .cta-btn,
+button.primary, button[type="submit"] {
+  background: var(--gradient-primary);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 6px 18px rgba(37,99,235,.18);
+}
+
+.btn-primary:hover, .primary-btn:hover, .donate-btn:hover, .cta-btn:hover,
+button.primary:hover, button[type="submit"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 9px 22px rgba(29,78,216,.24);
+}
+
+html[data-theme="dark"] .btn-primary,
+html[data-theme="dark"] .primary-btn,
+html[data-theme="dark"] .donate-btn,
+html[data-theme="dark"] .cta-btn,
+html[data-theme="dark"] button.primary,
+html[data-theme="dark"] button[type="submit"] {
+  box-shadow: 0 8px 22px rgba(56,189,248,.20);
+}
+
+/* Final blue-gradient dark-mode token correction */
+html[data-theme="dark"], body.dark-theme, html.dark-mode {
+  --bg-primary: #08111F;
+  --bg-secondary: #0D1B2A;
+  --bg-card: #122235;
+  --surface-soft: #172B43;
+  --surface-warm: #193A61;
+  --text-primary: #F8FBFF;
+  --text-secondary: #AFC2D4;
+  --text-muted: #7F95AA;
+  --border-color: #29445F;
+  --input-bg: #102033;
+  --input-text: #F8FBFF;
+  --primary: #60A5FA;
+  --primary-hover: #93C5FD;
+  --primary-light: #3A5F8F;
+  --accent: #38BDF8;
+  --accent-hover: #60A5FA;
+  --gradient-primary: linear-gradient(135deg, #1D4ED8 0%, #60A5FA 100%);
+  --gradient-soft: linear-gradient(135deg, #172B43 0%, #20364F 100%);
+}

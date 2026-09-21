@@ -1,0 +1,1221 @@
+/* =====================================================
+   NGO PROFILE
+   PREMIUM LIGHT + DARK DESIGN
+===================================================== */
+
+:root {
+  --profile-bg: #FAFAF9;
+  --profile-surface: #ffffff;
+  --profile-surface-soft: #FAFAF9;
+
+  --profile-text: #0F172A;
+  --profile-muted: #475569;
+
+  --profile-border: #E2E8F0;
+
+  --profile-navy: #0F172A;
+  --profile-navy-light: #475569;
+
+  --profile-coral: #2563EB;
+  --profile-coral-dark: #1D4ED8;
+  --profile-coral-soft: #DBEAFE;
+
+  --profile-green: #2563EB;
+  --profile-green-soft: #DBEAFE;
+
+  --profile-gold: #1D4ED8;
+
+  --profile-shadow:
+    0 18px 50px rgba(23, 32, 51, 0.08);
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-theme {
+  --profile-bg: #08111F;
+  --profile-surface: #0D1B2A;
+  --profile-surface-soft: #142B43;
+
+  --profile-text: #FFF5F8;
+  --profile-muted: #9E8C93;
+
+  --profile-border: #403238;
+
+  --profile-navy: #08111F;
+  --profile-navy-light: #0F172A;
+
+  --profile-coral-soft: #17345A;
+  --profile-green-soft: #17345A;
+
+  --profile-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.ngo-profile-page {
+  min-height: 100vh;
+
+  padding: 65px 25px 80px;
+
+  box-sizing: border-box;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 5% 10%,
+      rgba(37, 99, 235, 0.08),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 95% 45%,
+      rgba(91, 122, 158, 0.08),
+      transparent 25%
+    ),
+    var(--profile-bg);
+
+  color: var(--profile-text);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* =====================================================
+   DECORATIVE BACKGROUND
+===================================================== */
+
+.ngo-profile-page::before {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  right: -230px;
+  top: -210px;
+
+  border-radius: 50%;
+
+  border: 1px solid
+    rgba(232, 117, 92, 0.12);
+
+  pointer-events: none;
+}
+
+
+.ngo-profile-page::after {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  left: -180px;
+  bottom: -170px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(91, 122, 158, 0.08),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.ngo-profile-header {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 850px;
+
+  margin: 0 auto 30px;
+
+  text-align: center;
+}
+
+
+/* =====================================================
+   BACK TO DASHBOARD
+===================================================== */
+
+.ngo-dashboard-back-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  margin-bottom: 18px;
+
+  padding: 10px 17px;
+
+  border: 1px solid var(--profile-border);
+
+  border-radius: 9px;
+
+  background: var(--profile-surface);
+
+  color: var(--profile-text);
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.ngo-dashboard-back-button:hover {
+  transform: translateX(-3px);
+
+  border-color: var(--profile-coral);
+
+  background: var(--profile-coral-soft);
+
+  color: var(--profile-coral-dark);
+}
+
+
+/* =====================================================
+   BADGE
+===================================================== */
+
+.ngo-profile-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 8px 14px;
+
+  border: 1px solid
+    rgba(37, 99, 235, 0.20);
+
+  border-radius: 30px;
+
+  background: var(--profile-coral-soft);
+
+  color: var(--profile-coral);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.7px;
+}
+
+
+.ngo-profile-header h1 {
+  margin: 17px 0 9px;
+
+  color: var(--profile-text);
+
+  font-size: clamp(
+    38px,
+    5vw,
+    52px
+  );
+
+  line-height: 1;
+
+  letter-spacing: -2px;
+}
+
+
+.ngo-profile-header p {
+  margin: 0;
+
+  color: var(--profile-muted);
+
+  font-size: 11px;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   PROFILE CARD
+===================================================== */
+
+.ngo-profile-card {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  padding: 38px;
+
+  box-sizing: border-box;
+
+  border: 1px solid var(--profile-border);
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--profile-surface),
+      var(--profile-surface-soft)
+    );
+
+  box-shadow: var(--profile-shadow);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.ngo-logo-section {
+  display: flex;
+
+  justify-content: center;
+
+  margin-bottom: 30px;
+}
+
+
+.ngo-logo {
+  width: 135px;
+  height: 135px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 5px solid
+    var(--profile-coral-soft);
+
+  box-shadow:
+    0 12px 30px
+    rgba(23, 32, 51, 0.12);
+}
+
+
+.ngo-logo-placeholder {
+  width: 135px;
+  height: 135px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--profile-navy),
+      var(--profile-navy-light)
+    );
+
+  border: 5px solid
+    var(--profile-coral-soft);
+
+  color: var(--profile-coral);
+
+  font-size: 50px;
+
+  box-shadow:
+    0 12px 30px
+    rgba(23, 32, 51, 0.16);
+}
+
+
+/* =====================================================
+   PROFILE INFORMATION
+===================================================== */
+
+.ngo-profile-field {
+  display: grid;
+
+  grid-template-columns:
+    220px 1fr;
+
+  gap: 25px;
+
+  padding: 17px 4px;
+
+  border-bottom: 1px solid
+    var(--profile-border);
+}
+
+
+.ngo-profile-field strong {
+  color: var(--profile-text);
+
+  font-size: 10px;
+
+  font-weight: 750;
+
+  line-height: 1.5;
+}
+
+
+.ngo-profile-field span {
+  color: var(--profile-muted);
+
+  font-size: 10px;
+
+  line-height: 1.65;
+
+  word-break: break-word;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.ngo-status {
+  display: inline-flex;
+
+  width: fit-content;
+
+  align-items: center;
+
+  padding: 6px 12px;
+
+  border-radius: 30px;
+
+  font-size: 8px !important;
+
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+
+  text-transform: uppercase;
+}
+
+
+.ngo-status-approved {
+  background: var(--profile-green-soft);
+
+  color: var(--profile-green) !important;
+}
+
+
+.ngo-status-pending {
+  background: #DBEAFE;
+
+  color: #b8781c !important;
+}
+
+
+.ngo-status-rejected {
+  background: #DBEAFE;
+
+  color: #b8443b !important;
+}
+
+
+/* =====================================================
+   CERTIFICATE
+===================================================== */
+
+.ngo-certificate-section {
+  margin-top: 28px;
+
+  padding: 23px;
+
+  text-align: center;
+
+  border: 1px solid var(--profile-border);
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--profile-surface-soft),
+      var(--profile-surface)
+    );
+}
+
+
+.ngo-certificate-section h3 {
+  margin: 0 0 14px;
+
+  color: var(--profile-text);
+
+  font-size: 14px;
+}
+
+
+.ngo-certificate-section p {
+  margin: 0;
+
+  color: var(--profile-muted);
+
+  font-size: 10px;
+}
+
+
+.certificate-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 42px;
+
+  padding: 0 18px;
+
+  border-radius: 10px;
+
+  background: var(--profile-coral);
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  font-weight: 750;
+
+  box-shadow:
+    0 8px 20px
+    rgba(232, 117, 92, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.certificate-button:hover {
+  transform: translateY(-2px);
+
+  background: var(--profile-coral-dark);
+
+  box-shadow:
+    0 12px 25px
+    rgba(232, 117, 92, 0.25);
+}
+
+
+/* =====================================================
+   PROFILE ACTIONS
+===================================================== */
+
+.ngo-profile-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 25px;
+}
+
+
+/* =====================================================
+   EDIT PROFILE BUTTON
+===================================================== */
+
+.ngo-edit-button {
+  min-height: 45px;
+
+  padding: 0 22px;
+
+  border: 1px solid var(--profile-coral);
+
+  border-radius: 10px;
+
+  background: var(--profile-coral);
+
+  color: white;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px
+    rgba(232, 117, 92, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.ngo-edit-button:hover {
+  transform: translateY(-2px);
+
+  background: var(--profile-coral-dark);
+
+  box-shadow:
+    0 12px 25px
+    rgba(232, 117, 92, 0.25);
+}
+
+
+/* =====================================================
+   REFRESH
+===================================================== */
+
+.ngo-refresh-button {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 45px;
+
+  margin: 25px auto 0;
+
+  padding: 0 22px;
+
+  border: 1px solid var(--profile-border);
+
+  border-radius: 10px;
+
+  background: var(--profile-surface);
+
+  color: var(--profile-text);
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.ngo-refresh-button:hover {
+  transform: translateY(-2px);
+
+  border-color: var(--profile-coral);
+
+  background: var(--profile-coral-soft);
+}
+
+
+/* =====================================================
+   EDIT FORM
+===================================================== */
+
+.ngo-edit-form {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 18px 20px;
+}
+
+
+.ngo-edit-group {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+
+.full-edit-field {
+  grid-column: 1 / -1;
+}
+
+
+.ngo-edit-group label {
+  color: var(--profile-text);
+
+  font-size: 10px;
+
+  font-weight: 750;
+
+  line-height: 1.5;
+}
+
+
+.ngo-edit-group input,
+.ngo-edit-group textarea,
+.ngo-edit-group select {
+  width: 100%;
+
+  min-height: 44px;
+
+  padding: 11px 13px;
+
+  box-sizing: border-box;
+
+  border: 1px solid var(--profile-border);
+
+  border-radius: 9px;
+
+  outline: none;
+
+  background: var(--profile-surface-soft);
+
+  color: var(--profile-text);
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.ngo-edit-group textarea {
+  min-height: 90px;
+
+  resize: vertical;
+
+  line-height: 1.6;
+}
+
+
+.ngo-edit-group input::placeholder,
+.ngo-edit-group textarea::placeholder {
+  color: var(--profile-muted);
+}
+
+
+.ngo-edit-group input:focus,
+.ngo-edit-group textarea:focus,
+.ngo-edit-group select:focus {
+  border-color: var(--profile-coral);
+
+  background: var(--profile-surface);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(232, 117, 92, 0.09);
+}
+
+
+/* =====================================================
+   EDIT ACTIONS
+===================================================== */
+
+.ngo-edit-actions {
+  grid-column: 1 / -1;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  padding-top: 10px;
+
+  border-top: 1px solid
+    var(--profile-border);
+}
+
+
+.ngo-cancel-button,
+.ngo-save-button {
+  min-height: 44px;
+
+  padding: 0 20px;
+
+  border-radius: 9px;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+/* CANCEL */
+
+.ngo-cancel-button {
+  border: 1px solid var(--profile-border);
+
+  background: var(--profile-surface);
+
+  color: var(--profile-text);
+}
+
+
+.ngo-cancel-button:hover {
+  transform: translateY(-2px);
+
+  border-color: var(--profile-coral);
+
+  background: var(--profile-coral-soft);
+}
+
+
+/* SAVE */
+
+.ngo-save-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  border: 1px solid var(--profile-coral);
+
+  background: var(--profile-coral);
+
+  color: white;
+
+  box-shadow:
+    0 8px 20px
+    rgba(232, 117, 92, 0.18);
+}
+
+
+.ngo-save-button:hover {
+  transform: translateY(-2px);
+
+  background: var(--profile-coral-dark);
+
+  box-shadow:
+    0 12px 25px
+    rgba(232, 117, 92, 0.25);
+}
+
+
+.ngo-save-button:disabled,
+.ngo-cancel-button:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =====================================================
+   SMALL LOADING SPINNER
+===================================================== */
+
+.ngo-small-spinner {
+  width: 12px;
+  height: 12px;
+
+  border: 2px solid
+    rgba(255, 255, 255, 0.35);
+
+  border-top-color: white;
+
+  border-radius: 50%;
+
+  animation:
+    ngoProfileSpin 0.7s linear infinite;
+}
+
+
+@keyframes ngoProfileSpin {
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.ngo-profile-loading {
+  min-height: 300px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 15px;
+}
+
+
+.ngo-profile-loading h2 {
+  margin: 0;
+
+  color: var(--profile-text);
+
+  font-size: 20px;
+}
+
+
+.ngo-loading-spinner {
+  width: 32px;
+  height: 32px;
+
+  border: 3px solid
+    var(--profile-border);
+
+  border-top-color:
+    var(--profile-coral);
+
+  border-radius: 50%;
+
+  animation:
+    ngoProfileSpin 0.8s linear infinite;
+}
+
+
+/* =====================================================
+   ERROR / EMPTY
+===================================================== */
+
+.ngo-profile-message {
+  min-height: 300px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+.ngo-message-icon {
+  margin-bottom: 10px;
+
+  font-size: 35px;
+}
+
+
+.ngo-profile-message h2 {
+  margin: 0 0 8px;
+
+  color: var(--profile-text);
+
+  font-size: 22px;
+}
+
+
+.ngo-profile-message p {
+  max-width: 500px;
+
+  margin: 0 0 20px;
+
+  color: var(--profile-muted);
+
+  font-size: 10px;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   OLD ERROR ELEMENT SUPPORT
+===================================================== */
+
+.ngo-profile-card > h2 {
+  margin: 0;
+
+  color: var(--profile-text);
+
+  text-align: center;
+
+  font-size: 22px;
+}
+
+
+.ngo-profile-card > p {
+  color: var(--profile-muted);
+
+  text-align: center;
+
+  line-height: 1.7;
+}
+
+
+.ngo-profile-card > button {
+  font-family: inherit;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .ngo-profile-page {
+    padding: 45px 15px 60px;
+  }
+
+
+  .ngo-profile-header h1 {
+    font-size: 36px;
+
+    letter-spacing: -1.5px;
+  }
+
+
+  .ngo-profile-card {
+    padding: 25px 20px;
+
+    border-radius: 19px;
+  }
+
+
+  .ngo-profile-field {
+    grid-template-columns: 1fr;
+
+    gap: 6px;
+  }
+
+
+  .ngo-profile-field span {
+    text-align: left;
+  }
+
+
+  .ngo-status {
+    width: fit-content;
+  }
+
+
+  /* EDIT FORM */
+
+  .ngo-edit-form {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+
+  .full-edit-field {
+    grid-column: auto;
+  }
+
+
+  .ngo-edit-actions {
+    grid-column: auto;
+
+    flex-direction: column;
+  }
+
+
+  .ngo-edit-actions button {
+    width: 100%;
+  }
+
+
+  /* PROFILE BUTTONS */
+
+  .ngo-profile-actions {
+    flex-direction: column;
+  }
+
+
+  .ngo-profile-actions button {
+    width: 100%;
+  }
+
+
+  /* BACK BUTTON */
+
+  .ngo-dashboard-back-button {
+    width: auto;
+
+    margin-bottom: 15px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 420px) {
+
+  .ngo-profile-page {
+    padding-left: 12px;
+
+    padding-right: 12px;
+  }
+
+
+  .ngo-profile-header h1 {
+    font-size: 31px;
+  }
+
+
+  .ngo-profile-card {
+    padding: 21px 15px;
+  }
+
+
+  .ngo-logo,
+  .ngo-logo-placeholder {
+    width: 115px;
+
+    height: 115px;
+  }
+
+
+  .ngo-logo-placeholder {
+    font-size: 42px;
+  }
+
+
+  .ngo-dashboard-back-button {
+    width: 100%;
+  }
+
+}
+
+
+/* =====================================================
+   NGO PROFILE - DARK MODE FINAL FIX
+===================================================== */
+
+body.dark-theme .ngo-status-pending {
+  background: #3a301c;
+  color: #e4c875 !important;
+}
+
+body.dark-theme .ngo-status-rejected {
+  background: #382523;
+  color: #ef9c93 !important;
+}
+
+body.dark-theme .ngo-profile-page::before {
+  border-color: rgba(240, 138, 114, 0.12);
+}
+
+body.dark-theme .ngo-profile-page::after {
+  background:
+    radial-gradient(
+      circle,
+      rgba(130, 175, 210, 0.08),
+      transparent 70%
+    );
+}
+
+body.dark-theme .ngo-logo {
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-theme .ngo-logo-placeholder {
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.40);
+}
+
+body.dark-theme .ngo-edit-group input::placeholder,
+body.dark-theme .ngo-edit-group textarea::placeholder {
+  color: #475569;
+}
+
+/* Make select dropdowns and editable fields clearly dark */
+body.dark-theme .ngo-edit-group input,
+body.dark-theme .ngo-edit-group textarea,
+body.dark-theme .ngo-edit-group select {
+  background: var(--profile-surface-soft);
+  color: var(--profile-text);
+  border-color: var(--profile-border);
+}
+
+body.dark-theme .ngo-edit-group input:focus,
+body.dark-theme .ngo-edit-group textarea:focus,
+body.dark-theme .ngo-edit-group select:focus {
+  background: var(--profile-surface);
+}
+
+/* Smooth theme transition */
+.ngo-profile-page,
+.ngo-profile-card,
+.ngo-dashboard-back-button,
+.ngo-profile-field,
+.ngo-certificate-section,
+.ngo-refresh-button,
+.ngo-edit-group input,
+.ngo-edit-group textarea,
+.ngo-edit-group select,
+.ngo-cancel-button {
+  transition:
+    background-color 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+

@@ -1,0 +1,404 @@
+.admin-ngos-page {
+    min-height: 100vh;
+    padding: 30px;
+    background: #f5f7fb;
+    box-sizing: border-box;
+}
+
+.admin-ngos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.admin-ngos-header h1 {
+    margin: 0;
+    font-size: 30px;
+    color: #172033;
+}
+
+.admin-ngos-header p {
+    margin: 7px 0 0;
+    color: #697386;
+    font-size: 15px;
+}
+
+.refresh-btn {
+    border: none;
+    background: #ffffff;
+    color: #344054;
+    padding: 11px 18px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.refresh-btn:hover {
+    background: #f0f2f5;
+}
+
+.ngo-filters {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.ngo-search {
+    min-height: 38px;
+    width: min(300px, 100%);
+    box-sizing: border-box;
+    padding: 0 12px;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: #0F172A;
+    outline: none;
+}
+
+.ngo-search:focus {
+    border-color: #2563EB;
+    box-shadow: 0 0 0 3px #DBEAFE;
+}
+
+.filter-btn {
+    border: 1px solid #d9dee8;
+    background: #ffffff;
+    color: #596579;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.filter-btn:hover {
+    border-color: #9aa5b5;
+}
+
+.filter-btn.active {
+    background: #172033;
+    color: #ffffff;
+    border-color: #172033;
+}
+
+.ngo-error {
+    background: #fff0f0;
+    color: #c62828;
+    border: 1px solid #ffcaca;
+    padding: 14px 18px;
+    border-radius: 9px;
+    margin-bottom: 20px;
+}
+
+.ngo-loading,
+.ngo-empty {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+}
+
+.ngo-empty .empty-icon {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.ngo-empty h3 {
+    margin: 5px 0;
+    color: #172033;
+}
+
+.ngo-empty p {
+    color: #697386;
+}
+
+.ngo-table-container {
+    background: #ffffff;
+    border-radius: 14px;
+    overflow-x: auto;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+}
+
+.ngo-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 950px;
+}
+
+.ngo-table th {
+    text-align: left;
+    padding: 17px;
+    background: #f8f9fb;
+    color: #667085;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.ngo-table td {
+    padding: 17px;
+    border-top: 1px solid #edf0f4;
+    color: #344054;
+    font-size: 14px;
+}
+
+.ngo-table tbody tr:hover {
+    background: #fafbfc;
+}
+
+.ngo-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ngo-info strong {
+    display: block;
+    color: #172033;
+    margin-bottom: 4px;
+}
+
+.ngo-info span {
+    display: block;
+    color: #7a8494;
+    font-size: 12px;
+}
+
+.ngo-avatar,
+.ngo-avatar-placeholder {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.ngo-avatar-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #eef1f5;
+    font-size: 20px;
+}
+
+.location-info span {
+    display: block;
+    font-weight: 600;
+}
+
+.location-info small {
+    color: #7a8494;
+}
+
+.ngo-status {
+    display: inline-block;
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.status-pending {
+    background: #fff4d6;
+    color: #9a6700;
+}
+
+.status-approved {
+    background: #e5f8ed;
+    color: #16834d;
+}
+
+.status-rejected {
+    background: #ffe8e8;
+    color: #c62828;
+}
+
+.ngo-actions {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+}
+
+.ngo-actions button,
+.modal-actions button {
+    border: none;
+    border-radius: 7px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.view-btn {
+    background: #edf1f7;
+    color: #344054;
+}
+
+.view-btn:hover {
+    background: #e1e6ef;
+}
+
+.approve-btn {
+    background: #198754;
+    color: white;
+}
+
+.approve-btn:hover {
+    background: #157347;
+}
+
+.reject-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.reject-btn:hover {
+    background: #bb2d3b;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.ngo-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.ngo-modal {
+    width: min(750px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 22px 25px;
+    border-bottom: 1px solid #edf0f4;
+}
+
+.modal-header h2 {
+    margin: 0 0 8px;
+    color: #172033;
+}
+
+.close-btn {
+    border: none;
+    background: #f1f3f6;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 25px;
+}
+
+.detail-section {
+    margin-bottom: 25px;
+}
+
+.detail-section h3 {
+    margin: 0 0 15px;
+    font-size: 16px;
+    color: #172033;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.detail-grid label {
+    display: block;
+    font-size: 12px;
+    color: #8a94a6;
+    margin-bottom: 5px;
+}
+
+.detail-grid p {
+    margin: 0;
+    color: #344054;
+    font-weight: 600;
+}
+
+.address-text,
+.description-text {
+    line-height: 1.7;
+    color: #596579;
+}
+
+.certificate-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #172033;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    padding: 20px 25px;
+    border-top: 1px solid #edf0f4;
+}
+
+.modal-actions .large {
+    padding: 11px 20px;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .admin-ngos-page {
+        padding: 18px;
+    }
+
+    .admin-ngos-header {
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .admin-ngos-header h1 {
+        font-size: 24px;
+    }
+
+    .ngo-filters {
+        overflow-x: auto;
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+}

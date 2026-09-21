@@ -1,0 +1,1147 @@
+/* =====================================================
+   AI DONATIONS
+   DONOR REGISTER
+   NAVY + IVORY + CORAL
+===================================================== */
+
+:root {
+  --dr-navy: #0F172A;
+  --dr-navy-light: #475569;
+
+  --dr-ivory: #FAFAF9;
+  --dr-white: #ffffff;
+
+  --dr-coral: #2563EB;
+  --dr-coral-dark: #1D4ED8;
+  --dr-coral-soft: #DBEAFE;
+
+  --dr-text: #0F172A;
+  --dr-muted: #475569;
+
+  --dr-border: #E2E8F0;
+
+  --dr-shadow:
+    0 25px 70px rgba(23, 32, 51, 0.1);
+}
+
+/* =====================================================
+   DARK MODE VARIABLES
+===================================================== */
+
+body.dark-theme {
+  --dr-navy: #08111F;
+  --dr-navy-light: #0F172A;
+
+  --dr-ivory: #08111F;
+  --dr-white: #0D1B2A;
+
+  --dr-coral-soft: #17345A;
+
+  --dr-text: #FFF5F8;
+  --dr-muted: #9E8C93;
+
+  --dr-border: #403238;
+
+  --dr-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.30);
+
+  --dr-input-bg: #0F172A;
+  --dr-switch-bg: #0F172A;
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.donor-register-page {
+  min-height: 100vh;
+
+  display: grid;
+
+  grid-template-columns: 38% 62%;
+
+  background: var(--dr-ivory);
+}
+
+
+/* =====================================================
+   LEFT BRAND
+===================================================== */
+
+.donor-register-brand {
+  position: sticky;
+
+  top: 0;
+
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  padding: 60px;
+
+  box-sizing: border-box;
+
+  background: var(--dr-navy);
+
+  color: white;
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   BRAND CONTENT
+===================================================== */
+
+.donor-brand-content {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+
+  max-width: 480px;
+
+  margin: 0 auto;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.donor-brand-logo {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 80px;
+
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.donor-logo-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: var(--dr-coral);
+
+  box-shadow:
+    0 8px 25px rgba(232, 117, 92, 0.3);
+}
+
+
+/* =====================================================
+   BRAND MESSAGE
+===================================================== */
+
+.donor-brand-eyebrow {
+  margin: 0 0 18px;
+
+  color: #1D4ED8;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 2.5px;
+}
+
+.donor-brand-message h1 {
+  margin: 0;
+
+  font-size: clamp(40px, 4vw, 62px);
+
+  line-height: 1.04;
+
+  letter-spacing: -2.8px;
+}
+
+.donor-brand-message h1 span {
+  color: var(--dr-coral);
+}
+
+.donor-brand-message p:last-child {
+  max-width: 420px;
+
+  margin: 28px 0 0;
+
+  color: #CBBBC1;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   IMPACT POINTS
+===================================================== */
+
+.donor-impact-points {
+  margin-top: 55px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 22px;
+}
+
+.donor-impact-item {
+  display: flex;
+
+  gap: 15px;
+}
+
+.donor-impact-item > span {
+  width: 30px;
+
+  flex-shrink: 0;
+
+  color: #1D4ED8;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  padding-top: 3px;
+}
+
+.donor-impact-item strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  font-size: 13px;
+}
+
+.donor-impact-item p {
+  margin: 0;
+
+  color: #8f99a9;
+
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   DECORATIONS
+===================================================== */
+
+.donor-decoration {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.donor-decoration-one {
+  width: 450px;
+  height: 450px;
+
+  right: -270px;
+  top: 5%;
+
+  border: 1px solid rgba(
+    232,
+    117,
+    92,
+    0.14
+  );
+}
+
+.donor-decoration-two {
+  width: 600px;
+  height: 600px;
+
+  left: -420px;
+  bottom: -360px;
+
+  border: 1px solid rgba(
+    255,
+    255,
+    255,
+    0.04
+  );
+}
+
+
+/* =====================================================
+   RIGHT SECTION
+===================================================== */
+
+.donor-register-section {
+  min-height: 100vh;
+
+  padding: 55px 7%;
+
+  box-sizing: border-box;
+
+  background: var(--dr-ivory);
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.donor-register-card {
+  width: 100%;
+
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  padding: 48px 52px;
+
+  box-sizing: border-box;
+
+  background: var(--dr-white);
+
+  border: 1px solid rgba(
+    23,
+    32,
+    51,
+    0.05
+  );
+
+  border-radius: 24px;
+
+  box-shadow: var(--dr-shadow);
+
+  animation: donorCardAppear 0.55s ease;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.donor-register-header {
+  margin-bottom: 32px;
+}
+
+.donor-mobile-logo {
+  display: none;
+}
+
+.donor-register-eyebrow {
+  margin: 0 0 9px;
+
+  color: var(--dr-coral);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.donor-register-header h2 {
+  margin: 0 0 9px;
+
+  color: var(--dr-text);
+
+  font-size: 32px;
+
+  letter-spacing: -1.1px;
+}
+
+.donor-register-header > p:last-child {
+  margin: 0;
+
+  color: var(--dr-muted);
+
+  font-size: 13px;
+}
+
+
+/* =====================================================
+   ACCOUNT SWITCH
+===================================================== */
+
+.donor-account-switch {
+  margin-bottom: 38px;
+
+  padding: 16px;
+
+  border-radius: 16px;
+
+  background: #FAFAF9;
+
+  border: 1px solid var(--dr-border);
+}
+
+.donor-account-switch > p {
+  margin: 0 0 10px;
+
+  color: var(--dr-muted);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+.donor-account-buttons {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+}
+
+.donor-account-button {
+  min-height: 64px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px 13px;
+
+  border: 1px solid transparent;
+
+  border-radius: 12px;
+
+  background: white;
+
+  color: var(--dr-text);
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.donor-account-button > span {
+  width: 37px;
+  height: 37px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #f1efea;
+
+  font-size: 16px;
+}
+
+.donor-account-button strong {
+  display: block;
+
+  font-size: 12px;
+}
+
+.donor-account-button small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: var(--dr-muted);
+
+  font-size: 10px;
+}
+
+.donor-account-button:hover {
+  transform: translateY(-1px);
+
+  border-color: #d8d5cf;
+}
+
+.donor-account-button.active {
+  border-color: var(--dr-coral);
+
+  box-shadow:
+    0 5px 15px rgba(
+      232,
+      117,
+      92,
+      0.1
+    );
+}
+
+.donor-account-button.active > span {
+  background: var(--dr-coral-soft);
+
+  color: var(--dr-coral);
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.donor-register-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
+.form-section-title {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 12px;
+
+  padding-top: 10px;
+
+  margin-top: 5px;
+
+  border-top: 1px solid var(--dr-border);
+}
+
+.form-section-title > span {
+  width: 30px;
+  height: 30px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 18px;
+
+  border-radius: 9px;
+
+  background: var(--dr-coral-soft);
+
+  color: var(--dr-coral);
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.form-section-title > div {
+  margin-top: 15px;
+}
+
+.form-section-title h3 {
+  margin: 0;
+
+  color: var(--dr-text);
+
+  font-size: 15px;
+}
+
+.form-section-title p {
+  margin: 4px 0 0;
+
+  color: var(--dr-muted);
+
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   FORM GRID
+===================================================== */
+
+.donor-form-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 16px;
+}
+
+.donor-location-grid {
+  grid-template-columns:
+    1fr
+    1fr
+    0.7fr;
+}
+
+
+/* =====================================================
+   FORM GROUP
+===================================================== */
+
+.donor-form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.donor-form-group label {
+  color: var(--dr-text);
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   INPUTS
+===================================================== */
+
+.donor-input-wrapper {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.donor-input-wrapper > span {
+  position: absolute;
+
+  left: 14px;
+
+  color: #989ca4;
+
+  font-size: 13px;
+
+  pointer-events: none;
+}
+
+.donor-input-wrapper input,
+.donor-form-group > input,
+.donor-form-group textarea,
+.donor-form-group select {
+  width: 100%;
+
+  min-height: 49px;
+
+  box-sizing: border-box;
+
+  border: 1px solid var(--dr-border);
+
+  border-radius: 10px;
+
+  outline: none;
+
+  background: white;
+
+  color: var(--dr-text);
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.donor-input-wrapper input {
+  padding:
+    0
+    42px
+    0
+    40px;
+}
+
+.donor-form-group > input,
+.donor-form-group select {
+  padding: 0 14px;
+}
+
+.donor-form-group textarea {
+  padding: 13px 14px;
+
+  resize: vertical;
+
+  line-height: 1.5;
+}
+
+.donor-input-wrapper input::placeholder,
+.donor-form-group input::placeholder,
+.donor-form-group textarea::placeholder {
+  color: #aaaeb5;
+}
+
+.donor-input-wrapper input:focus,
+.donor-form-group > input:focus,
+.donor-form-group textarea:focus,
+.donor-form-group select:focus {
+  border-color: var(--dr-coral);
+
+  box-shadow:
+    0 0 0 3px rgba(
+      232,
+      117,
+      92,
+      0.1
+    );
+}
+
+
+/* =====================================================
+   PASSWORD TOGGLE
+===================================================== */
+
+.donor-password-toggle {
+  position: absolute;
+
+  right: 9px;
+
+  width: 30px;
+  height: 30px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: transparent;
+
+  color: #8d929a;
+
+  cursor: pointer;
+}
+
+.donor-password-toggle:hover {
+  background: var(--dr-coral-soft);
+
+  color: var(--dr-coral);
+}
+
+
+/* =====================================================
+   SUBMIT
+===================================================== */
+
+.donor-register-submit {
+  width: 100%;
+
+  min-height: 53px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 8px;
+
+  border: none;
+
+  border-radius: 11px;
+
+  background: var(--dr-coral);
+
+  color: white;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 24px rgba(
+      232,
+      117,
+      92,
+      0.2
+    );
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.donor-register-submit:hover:not(:disabled) {
+  background: var(--dr-coral-dark);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 30px rgba(
+      232,
+      117,
+      92,
+      0.25
+    );
+}
+
+.donor-register-submit:disabled {
+  opacity: 0.7;
+
+  cursor: not-allowed;
+}
+
+.donor-register-submit > span:last-child {
+  font-size: 18px;
+}
+
+
+/* =====================================================
+   SPINNER
+===================================================== */
+
+.donor-spinner {
+  width: 15px;
+  height: 15px;
+
+  border: 2px solid rgba(
+    255,
+    255,
+    255,
+    0.4
+  );
+
+  border-top-color: white;
+
+  border-radius: 50%;
+
+  animation:
+    donorSpin 0.7s linear infinite;
+}
+
+
+/* =====================================================
+   LOGIN PROMPT
+===================================================== */
+
+.donor-login-prompt {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  margin-top: 5px;
+
+  color: var(--dr-muted);
+
+  font-size: 11px;
+}
+
+.donor-login-prompt button {
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--dr-coral);
+
+  font-family: inherit;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.donor-login-prompt button:hover {
+  text-decoration: underline;
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes donorCardAppear {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes donorSpin {
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .donor-register-page {
+    grid-template-columns: 34% 66%;
+  }
+
+  .donor-register-brand {
+    padding: 40px;
+  }
+
+  .donor-brand-message h1 {
+    font-size: 43px;
+  }
+
+  .donor-register-section {
+    padding: 35px 25px;
+  }
+
+  .donor-register-card {
+    padding: 38px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 800px) {
+
+  .donor-register-page {
+    display: block;
+  }
+
+  .donor-register-brand {
+    position: relative;
+
+    height: auto;
+
+    min-height: auto;
+
+    padding: 30px 24px 38px;
+  }
+
+  .donor-brand-logo {
+    margin-bottom: 45px;
+  }
+
+  .donor-brand-message h1 {
+    font-size: 40px;
+  }
+
+  .donor-impact-points {
+    display: none;
+  }
+
+  .donor-register-section {
+    min-height: auto;
+
+    padding: 24px 16px 45px;
+  }
+
+  .donor-register-card {
+    padding: 30px 22px;
+
+    border-radius: 20px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 500px) {
+
+  .donor-register-brand {
+    padding: 25px 20px 32px;
+  }
+
+  .donor-brand-message h1 {
+    font-size: 34px;
+
+    letter-spacing: -1.8px;
+  }
+
+  .donor-brand-message p:last-child {
+    font-size: 13px;
+  }
+
+  .donor-register-section {
+    padding: 18px 12px 35px;
+  }
+
+  .donor-register-card {
+    padding: 25px 18px;
+  }
+
+  .donor-register-header h2 {
+    font-size: 28px;
+  }
+
+  .donor-form-grid,
+  .donor-location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .donor-account-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .form-section-title {
+    gap: 10px;
+  }
+
+}
+
+
+/* =====================================================
+   DARK MODE OVERRIDES
+===================================================== */
+
+body.dark-theme .donor-register-page {
+  background: var(--dr-ivory);
+  color: var(--dr-text);
+}
+
+body.dark-theme .donor-register-brand {
+  background: linear-gradient(
+    135deg,
+    var(--dr-navy),
+    var(--dr-navy-light)
+  );
+}
+
+body.dark-theme .donor-register-section {
+  background: var(--dr-ivory);
+}
+
+body.dark-theme .donor-register-card {
+  background: var(--dr-white);
+  border-color: var(--dr-border);
+  box-shadow: var(--dr-shadow);
+}
+
+body.dark-theme .donor-register-header h2,
+body.dark-theme .donor-form-group label,
+body.dark-theme .form-section-title h3 {
+  color: var(--dr-text);
+}
+
+body.dark-theme .donor-register-header > p:last-child,
+body.dark-theme .form-section-title p,
+body.dark-theme .donor-account-switch > p,
+body.dark-theme .donor-account-button small,
+body.dark-theme .donor-login-prompt {
+  color: var(--dr-muted);
+}
+
+body.dark-theme .donor-account-switch {
+  background: var(--dr-switch-bg);
+  border-color: var(--dr-border);
+}
+
+body.dark-theme .donor-account-button {
+  background: var(--dr-input-bg);
+  color: var(--dr-text);
+  border-color: var(--dr-border);
+}
+
+body.dark-theme .donor-account-button > span {
+  background: #293446;
+}
+
+body.dark-theme .donor-account-button:hover {
+  border-color: #475569;
+}
+
+body.dark-theme .donor-account-button.active {
+  border-color: var(--dr-coral);
+}
+
+body.dark-theme .donor-input-wrapper input,
+body.dark-theme .donor-form-group > input,
+body.dark-theme .donor-form-group textarea,
+body.dark-theme .donor-form-group select {
+  background: var(--dr-input-bg);
+  color: var(--dr-text);
+  border-color: var(--dr-border);
+}
+
+body.dark-theme .donor-input-wrapper input::placeholder,
+body.dark-theme .donor-form-group input::placeholder,
+body.dark-theme .donor-form-group textarea::placeholder {
+  color: #475569;
+}
+
+body.dark-theme .donor-input-wrapper > span {
+  color: #94A3B8;
+}
+
+body.dark-theme .donor-password-toggle {
+  color: #94A3B8;
+}
+
+body.dark-theme .donor-password-toggle:hover {
+  background: var(--dr-coral-soft);
+  color: var(--dr-coral);
+}
+
+body.dark-theme .form-section-title {
+  border-top-color: var(--dr-border);
+}
+
+body.dark-theme .donor-login-prompt button {
+  color: var(--dr-coral);
+}
+
+/* Keep white text/icons on coral and navy areas */
+body.dark-theme .donor-register-submit,
+body.dark-theme .donor-register-submit span {
+  color: #ffffff;
+}
+
+body.dark-theme .donor-register-brand {
+  color: #ffffff;
+}
+
+/* Smooth transitions */
+.donor-register-page,
+.donor-register-brand,
+.donor-register-section,
+.donor-register-card,
+.donor-account-switch,
+.donor-account-button,
+.donor-input-wrapper input,
+.donor-form-group > input,
+.donor-form-group textarea,
+.donor-form-group select {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}

@@ -1,0 +1,123 @@
+.admin-page-content {
+    min-height: 100vh;
+    padding: 30px;
+    background: #f5f7fb;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.admin-page-header {
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 25px;
+}
+
+.admin-page-header h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #111827;
+}
+
+.admin-page-header p {
+    margin-top: 7px;
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.analytics-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 25px;
+}
+
+.analytics-card span {
+    display: block;
+    color: #6b7280;
+    font-size: 12px;
+}
+
+.analytics-card strong {
+    display: block;
+    margin-top: 10px;
+    color: #111827;
+    font-size: 20px;
+}
+
+@media (max-width: 900px) {
+    .analytics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .analytics-grid {
+        grid-template-columns: 1fr;
+    }
+}.admin-page-content {
+    min-height: 100vh;
+    padding: 30px;
+    background: #f5f7fb;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.admin-page-header {
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 25px;
+}
+
+.admin-page-header h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #111827;
+}
+
+.admin-page-header p {
+    margin-top: 7px;
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.analytics-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 25px;
+}
+
+.analytics-card span {
+    display: block;
+    color: #6b7280;
+    font-size: 12px;
+}
+
+.analytics-card strong {
+    display: block;
+    margin-top: 10px;
+    color: #111827;
+    font-size: 20px;
+}
+
+@media (max-width: 900px) {
+    .analytics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .analytics-grid {
+        grid-template-columns: 1fr;
+    }
+}

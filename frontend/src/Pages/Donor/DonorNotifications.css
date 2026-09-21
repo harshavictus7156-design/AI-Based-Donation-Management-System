@@ -1,0 +1,886 @@
+/* ============================================================
+   DONOR NOTIFICATIONS + DONOR SETTINGS
+   Shared Workspace Styling
+   ============================================================ */
+
+
+/* ============================================================
+   ROOT VARIABLES
+   ============================================================ */
+
+:root {
+  --ds-navy: #0F172A;
+  --ds-navy-light: #3F3F46;
+
+  --ds-ivory: #FAFAF9;
+  --ds-white: #FFFFFF;
+
+  --ds-burgundy: #2563EB;
+  --ds-burgundy-dark: #1D4ED8;
+  --ds-burgundy-soft: #DBEAFE;
+
+  --ds-text: #0F172A;
+  --ds-muted: #475569;
+
+  --ds-border: #E2E8F0;
+
+  --ds-green: #287A3D;
+  --ds-green-soft: #EDF7EF;
+
+  --ds-blue: #557B9D;
+  --ds-blue-soft: #EDF3F7;
+
+  --ds-danger: #B84032;
+  --ds-danger-soft: #FDEEEE;
+
+  --ds-shadow:
+    0 14px 45px rgba(23, 32, 51, 0.06);
+}
+
+
+/* ============================================================
+   DARK MODE
+   ============================================================ */
+
+body.dark-theme {
+  --ds-navy: #08111F;
+  --ds-navy-light: #0D1B2A;
+
+  --ds-ivory: #08111F;
+  --ds-white: #0D1B2A;
+
+  --ds-burgundy: #2563EB;
+  --ds-burgundy-dark: #1D4ED8;
+  --ds-burgundy-soft: #17345A;
+
+  --ds-text: #F3F5F8;
+  --ds-muted: #A1A1AA;
+
+  --ds-border: #403238;
+
+  --ds-green: #78B58D;
+  --ds-green-soft: #1D3023;
+
+  --ds-blue: #91A7BB;
+  --ds-blue-soft: #202A32;
+
+  --ds-danger: #E07A6C;
+  --ds-danger-soft: #351D1D;
+
+  --ds-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.28);
+}
+
+
+/* ============================================================
+   SHARED PAGE
+   ============================================================ */
+
+.donor-notifications-page,
+.donor-settings-page {
+  min-height: 100vh;
+
+  padding: 42px 6% 70px;
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 5% 8%,
+      rgba(127, 29, 29, 0.05),
+      transparent 25%
+    ),
+    var(--ds-ivory);
+
+  color: var(--ds-text);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* ============================================================
+   HEADERS
+   ============================================================ */
+
+.notification-header,
+.settings-header {
+  max-width: 1050px;
+
+  margin: 0 auto 28px;
+}
+
+
+.notification-header span,
+.settings-header span {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: var(--ds-burgundy);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+
+.notification-header h1,
+.settings-header h1 {
+  margin: 10px 0 7px;
+
+  color: var(--ds-text);
+
+  font-size: clamp(
+    32px,
+    4vw,
+    44px
+  );
+
+  font-weight: 800;
+
+  letter-spacing: -1.5px;
+
+  line-height: 1.1;
+}
+
+
+.notification-header p,
+.settings-header p {
+  margin: 0;
+
+  color: var(--ds-muted);
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   NOTIFICATION CARD
+   ============================================================ */
+
+.notification-card {
+  max-width: 1050px;
+
+  margin: 0 auto;
+
+  padding: 8px 24px;
+
+  border: 1px solid var(--ds-border);
+
+  border-radius: 18px;
+
+  background: var(--ds-white);
+
+  box-shadow: var(--ds-shadow);
+}
+
+
+/* ============================================================
+   NOTIFICATION ROW
+   ============================================================ */
+
+.notification-row {
+  display: grid;
+
+  grid-template-columns:
+    46px
+    1fr
+    auto;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 19px 0;
+
+  border-bottom: 1px solid var(--ds-border);
+}
+
+
+.notification-row:last-child {
+  border-bottom: none;
+}
+
+
+/* ============================================================
+   NOTIFICATION ICON
+   ============================================================ */
+
+.notification-icon {
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 13px;
+
+  font-size: 17px;
+}
+
+
+.notification-icon.coral {
+  background: var(--ds-burgundy-soft);
+
+  color: var(--ds-burgundy);
+}
+
+
+.notification-icon.green {
+  background: var(--ds-green-soft);
+
+  color: var(--ds-green);
+}
+
+
+.notification-icon.blue {
+  background: var(--ds-blue-soft);
+
+  color: var(--ds-blue);
+}
+
+
+/* ============================================================
+   NOTIFICATION TEXT
+   ============================================================ */
+
+.notification-copy {
+  min-width: 0;
+}
+
+
+.notification-copy strong {
+  display: block;
+
+  color: var(--ds-text);
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  line-height: 1.35;
+}
+
+
+.notification-copy p {
+  margin: 5px 0 0;
+
+  color: var(--ds-muted);
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* ============================================================
+   NOTIFICATION STATUS
+   ============================================================ */
+
+.notification-time {
+  color: var(--ds-muted);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.7px;
+}
+
+
+/* ============================================================
+   SETTINGS CONTENT
+   ============================================================ */
+
+.settings-content {
+  max-width: 1050px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+
+/* ============================================================
+   SETTINGS CARD
+   ============================================================ */
+
+.settings-card {
+  width: 100%;
+
+  padding: 22px 24px;
+
+  box-sizing: border-box;
+
+  border: 1px solid var(--ds-border);
+
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--ds-white),
+      var(--ds-ivory)
+    );
+
+  box-shadow: var(--ds-shadow);
+}
+
+
+/* ============================================================
+   SETTINGS SECTION HEADING
+   ============================================================ */
+
+.settings-section-heading {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+
+.settings-section-icon {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 11px;
+
+  font-size: 17px;
+}
+
+
+.settings-section-icon.coral {
+  background: var(--ds-burgundy-soft);
+
+  color: var(--ds-burgundy);
+}
+
+
+.settings-section-icon.blue {
+  background: var(--ds-blue-soft);
+
+  color: var(--ds-blue);
+}
+
+
+.settings-section-icon.green {
+  background: var(--ds-green-soft);
+
+  color: var(--ds-green);
+}
+
+
+.settings-section-icon.danger {
+  background: var(--ds-danger-soft);
+
+  color: var(--ds-danger);
+}
+
+
+.settings-section-heading span {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: var(--ds-burgundy);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+
+.settings-section-heading h2 {
+  margin: 0;
+
+  color: var(--ds-text);
+
+  font-size: 18px;
+
+  font-weight: 750;
+
+  letter-spacing: -0.3px;
+}
+
+
+/* ============================================================
+   SETTINGS ROW
+   ============================================================ */
+
+.settings-row {
+  min-height: 66px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 13px 4px;
+
+  border-top: 1px solid var(--ds-border);
+
+  box-sizing: border-box;
+}
+
+
+.settings-row:first-of-type {
+  border-top: none;
+}
+
+
+.settings-row-icon {
+  width: 35px;
+  height: 35px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: var(--ds-ivory);
+
+  color: var(--ds-muted);
+
+  border: 1px solid var(--ds-border);
+
+  font-size: 14px;
+}
+
+
+.settings-row-content {
+  min-width: 0;
+
+  flex: 1;
+}
+
+
+.settings-row-content strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: var(--ds-text);
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  line-height: 1.35;
+}
+
+
+.settings-row-content p {
+  margin: 0;
+
+  color: var(--ds-muted);
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* ============================================================
+   STATUS BADGES
+   ============================================================ */
+
+.settings-status {
+  flex-shrink: 0;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 48px;
+
+  min-height: 27px;
+
+  padding: 0 9px;
+
+  border-radius: 20px;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+}
+
+
+.settings-status.active {
+  background: var(--ds-green-soft);
+
+  color: var(--ds-green);
+
+  border: 1px solid
+    rgba(40, 122, 61, 0.16);
+}
+
+
+.settings-status.secure {
+  background: var(--ds-blue-soft);
+
+  color: var(--ds-blue);
+
+  border: 1px solid
+    rgba(79, 100, 122, 0.16);
+}
+
+
+/* ============================================================
+   SETTINGS ACTION BUTTON
+   ============================================================ */
+
+.settings-action-button {
+  flex-shrink: 0;
+
+  min-width: 75px;
+
+  min-height: 35px;
+
+  padding: 0 15px;
+
+  border: 1px solid var(--ds-border);
+
+  border-radius: 8px;
+
+  background: var(--ds-white);
+
+  color: var(--ds-text);
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.settings-action-button:hover {
+  border-color: var(--ds-burgundy);
+
+  background: var(--ds-burgundy-soft);
+
+  color: var(--ds-burgundy);
+
+  transform: translateY(-1px);
+}
+
+
+/* ============================================================
+   LOGOUT
+   ============================================================ */
+
+.settings-logout-button {
+  flex-shrink: 0;
+
+  min-width: 75px;
+
+  min-height: 35px;
+
+  padding: 0 15px;
+
+  border: 1px solid
+    rgba(184, 64, 50, 0.22);
+
+  border-radius: 8px;
+
+  background: var(--ds-danger-soft);
+
+  color: var(--ds-danger);
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.settings-logout-button:hover {
+  border-color: var(--ds-danger);
+
+  transform: translateY(-1px);
+}
+
+
+/* ============================================================
+   DANGER CARD
+   ============================================================ */
+
+.settings-danger-card {
+  border-color:
+    rgba(184, 64, 50, 0.14);
+}
+
+
+/* ============================================================
+   THEME TOGGLE
+   ============================================================ */
+
+.settings-row .theme-toggle {
+  flex-shrink: 0;
+}
+
+
+/* ============================================================
+   DARK MODE REFINEMENTS
+   ============================================================ */
+
+body.dark-theme
+.settings-row-icon {
+  background: #17171A;
+}
+
+
+body.dark-theme
+.settings-action-button {
+  background: #202024;
+
+  color: var(--ds-text);
+}
+
+
+body.dark-theme
+.notification-card,
+body.dark-theme
+.settings-card {
+  background:
+    linear-gradient(
+      145deg,
+      #0D1B2A,
+      #0F172A
+    );
+
+  border-color: var(--ds-border);
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 850px) {
+
+  .donor-notifications-page,
+  .donor-settings-page {
+    padding:
+      32px 25px 55px;
+  }
+
+  .notification-header,
+  .settings-header,
+  .notification-card,
+  .settings-content {
+    max-width: 100%;
+  }
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+  .donor-notifications-page,
+  .donor-settings-page {
+    padding:
+      30px 20px 45px;
+  }
+
+
+  .notification-header,
+  .settings-header {
+    margin-bottom: 20px;
+  }
+
+
+  .notification-header h1,
+  .settings-header h1 {
+    font-size: 32px;
+
+    letter-spacing: -1px;
+  }
+
+
+  .notification-header p,
+  .settings-header p {
+    font-size: 12px;
+  }
+
+
+  .notification-card,
+  .settings-card {
+    padding:
+      5px 16px;
+
+    border-radius: 15px;
+  }
+
+
+  .notification-row {
+    grid-template-columns:
+      42px
+      1fr;
+
+    gap: 12px;
+
+    padding: 17px 0;
+  }
+
+
+  .notification-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+
+  .notification-copy strong {
+    font-size: 13px;
+  }
+
+
+  .notification-copy p {
+    font-size: 11px;
+  }
+
+
+  .notification-time {
+    grid-column: 2;
+  }
+
+
+  .settings-card {
+    padding:
+      19px 17px;
+  }
+
+
+  .settings-section-heading h2 {
+    font-size: 17px;
+  }
+
+
+  .settings-row {
+    gap: 10px;
+
+    padding:
+      13px 2px;
+  }
+
+
+  .settings-row-icon {
+    width: 32px;
+    height: 32px;
+
+    font-size: 13px;
+  }
+
+
+  .settings-row-content strong {
+    font-size: 13px;
+  }
+
+
+  .settings-row-content p {
+    font-size: 11px;
+  }
+
+
+  .settings-status {
+    min-width: 44px;
+
+    font-size: 8px;
+  }
+
+
+  .settings-action-button,
+  .settings-logout-button {
+    min-width: 68px;
+
+    padding: 0 11px;
+
+    font-size: 11px;
+  }
+}
+
+
+/* ============================================================
+   SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 420px) {
+
+  .settings-row {
+    align-items: flex-start;
+  }
+
+
+  .settings-row-icon {
+    margin-top: 2px;
+  }
+
+
+  .settings-status,
+  .settings-action-button,
+  .settings-logout-button,
+  .settings-row .theme-toggle {
+    align-self: center;
+  }
+
+
+  .settings-section-icon {
+    width: 38px;
+    height: 38px;
+  }
+}

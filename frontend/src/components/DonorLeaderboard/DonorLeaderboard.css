@@ -1,0 +1,223 @@
+.donor-ranking-section {
+  margin-bottom: 20px;
+}
+
+.donor-ranking-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.donor-ranking-header span,
+.current-donor-rank > div > span {
+  display: block;
+  color: var(--primary, #2563EB);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: .12em;
+}
+
+.donor-ranking-header h2 {
+  margin: 5px 0 0;
+  color: var(--text-primary, #0F172A);
+  font-size: 19px;
+  line-height: 1.25;
+}
+
+.donor-ranking-refresh {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border-color, #E2E8F0);
+  border-radius: 10px;
+  background: var(--bg-card, #FFFFFF);
+  color: var(--primary, #2563EB);
+  cursor: pointer;
+}
+
+.donor-ranking-refresh:hover {
+  background: var(--primary-light, #DBEAFE);
+}
+
+.current-donor-rank {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 12px;
+  padding: 15px 17px;
+  border: 1px solid var(--border-color, #E2E8F0);
+  border-radius: 16px;
+  background: var(--bg-card, #FFFFFF);
+  box-shadow: var(--shadow-sm, 0 4px 16px rgba(15, 23, 42, .06));
+}
+
+.current-donor-rank > svg {
+  width: 42px;
+  height: 42px;
+  padding: 11px;
+  box-sizing: border-box;
+  border-radius: 13px;
+  background: var(--primary-light, #DBEAFE);
+  color: var(--primary, #2563EB);
+}
+
+.current-donor-rank strong {
+  display: block;
+  margin-top: 3px;
+  color: var(--text-primary, #0F172A);
+  font-size: 22px;
+}
+
+.current-donor-rank-details {
+  display: grid;
+  gap: 3px;
+  text-align: right;
+  color: var(--text-secondary, #475569);
+  font-size: 11px;
+}
+
+.top-rank-card {
+  border-color: #F5C76A;
+  background: #FFF9E8;
+}
+
+.top-rank-card > svg {
+  background: #FEF3C7;
+  color: #B45309;
+}
+
+.donor-ranking-card {
+  overflow: hidden;
+  border: 1px solid var(--border-color, #E2E8F0);
+  border-radius: 18px;
+  background: var(--bg-card, #FFFFFF);
+  box-shadow: var(--shadow-sm, 0 4px 16px rgba(15, 23, 42, .06));
+}
+
+.donor-ranking-row {
+  display: grid;
+  grid-template-columns: 52px minmax(130px, 1fr) auto auto auto;
+  align-items: center;
+  gap: 16px;
+  min-height: 60px;
+  padding: 10px 18px;
+  border-top: 1px solid var(--border-color, #E2E8F0);
+}
+
+.donor-ranking-row:first-child {
+  border-top: 0;
+}
+
+.donor-ranking-rank {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: var(--surface-soft, #EFF6FF);
+  color: var(--text-secondary, #475569);
+  font-size: 11px;
+  font-weight: 850;
+}
+
+.rank-1 .donor-ranking-rank { background: #FEF3C7; color: #B45309; }
+.rank-2 .donor-ranking-rank { background: #E2E8F0; color: #475569; }
+.rank-3 .donor-ranking-rank { background: #FDE7D3; color: #B45309; }
+
+.donor-ranking-user {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--text-primary, #0F172A);
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.donor-ranking-total,
+.donor-ranking-count {
+  color: var(--text-secondary, #475569);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.donor-ranking-total {
+  color: var(--text-primary, #0F172A);
+  font-weight: 800;
+}
+
+.donor-ranking-current {
+  background: var(--primary-light, #DBEAFE);
+  box-shadow: inset 3px 0 0 var(--primary, #2563EB);
+}
+
+.donor-ranking-you {
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: var(--primary, #2563EB);
+  color: #FFFFFF;
+  font-size: 9px;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.donor-ranking-message {
+  margin: 0;
+  padding: 30px 18px;
+  color: var(--text-secondary, #475569);
+  font-size: 13px;
+  text-align: center;
+}
+
+.donor-ranking-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.donor-ranking-error button {
+  border: 0;
+  background: transparent;
+  color: var(--primary, #2563EB);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+html[data-theme="dark"] .top-rank-card,
+body.dark-theme .top-rank-card {
+  background: #302711;
+  border-color: #6B521D;
+}
+
+@media (max-width: 620px) {
+  .current-donor-rank {
+    grid-template-columns: 42px minmax(0, 1fr);
+  }
+
+  .current-donor-rank-details {
+    grid-column: 2;
+    text-align: left;
+  }
+
+  .donor-ranking-row {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 5px 10px;
+    padding: 12px 14px;
+  }
+
+  .donor-ranking-you { grid-column: 2; justify-self: start; }
+
+  .donor-ranking-rank {
+    grid-row: span 2;
+  }
+
+  .donor-ranking-total,
+  .donor-ranking-count {
+    font-size: 10px;
+  }
+}

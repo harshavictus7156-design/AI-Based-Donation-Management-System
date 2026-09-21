@@ -1,0 +1,940 @@
+/* =========================================================
+   ADMIN DONORS
+   Theme: Navy + Ivory + Blue
+   Matches Login.css
+========================================================= */
+
+:root {
+    --admin-navy: #0F172A;
+    --admin-navy-light: #475569;
+
+    --admin-ivory: #FAFAF9;
+    --admin-white: #FFFFFF;
+
+    --admin-blue: #2563EB;
+    --admin-blue-dark: #1D4ED8;
+    --admin-blue-soft: #DBEAFE;
+
+    --admin-text: #0F172A;
+    --admin-text-light: #334155;
+    --admin-muted: #64748B;
+
+    --admin-border: #E2E8F0;
+    --admin-border-light: #F1F5F9;
+
+    --admin-success-bg: #ECFDF5;
+    --admin-success: #047857;
+
+    --admin-danger-bg: #FEF2F2;
+    --admin-danger: #B91C1C;
+
+    --admin-shadow:
+        0 4px 14px rgba(15, 23, 42, 0.05);
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.admin-page-content {
+    min-height: 100vh;
+
+    padding: 30px;
+
+    background: var(--admin-ivory);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: var(--admin-text);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.admin-page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-bottom: 24px;
+    margin-bottom: 22px;
+
+    border-bottom: 1px solid var(--admin-border);
+}
+
+.admin-page-header h1 {
+    margin: 0;
+
+    color: var(--admin-navy);
+
+    font-size: 28px;
+    font-weight: 700;
+
+    letter-spacing: -0.4px;
+}
+
+.admin-page-header p {
+    margin: 7px 0 0;
+
+    color: var(--admin-muted);
+
+    font-size: 13px;
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   REFRESH BUTTON
+========================================================= */
+
+.admin-refresh-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    border: 1px solid var(--admin-blue);
+
+    background: var(--admin-blue);
+    color: var(--admin-white);
+
+    padding: 10px 16px;
+
+    min-height: 38px;
+
+    border-radius: 9px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 8px rgba(37, 99, 235, 0.18);
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.admin-refresh-btn:hover {
+    background: var(--admin-blue-dark);
+    border-color: var(--admin-blue-dark);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 12px rgba(37, 99, 235, 0.22);
+}
+
+.admin-refresh-btn:active {
+    transform: translateY(0);
+
+    box-shadow:
+        0 2px 5px rgba(37, 99, 235, 0.15);
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.donor-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   FILTER BUTTONS
+========================================================= */
+
+.donor-filter-buttons {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 4px;
+
+    background: #F1F5F9;
+
+    border: 1px solid var(--admin-border);
+
+    border-radius: 10px;
+}
+
+.donor-filter-buttons button {
+    border: 1px solid transparent;
+
+    background: transparent;
+
+    color: var(--admin-muted);
+
+    padding: 8px 13px;
+
+    border-radius: 7px;
+
+    font-family: inherit;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.donor-filter-buttons button:hover {
+    background: var(--admin-white);
+
+    color: var(--admin-text-light);
+}
+
+.donor-filter-buttons button.active {
+    background: var(--admin-white);
+
+    border-color: var(--admin-border);
+
+    color: var(--admin-blue);
+
+    box-shadow:
+        0 2px 5px rgba(15, 23, 42, 0.06);
+}
+
+
+/* =========================================================
+   DONOR COUNT
+========================================================= */
+
+.donor-count {
+    color: var(--admin-muted);
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   DONORS CARD
+========================================================= */
+
+.admin-donors-card {
+    width: 100%;
+
+    background: var(--admin-white);
+
+    border: 1px solid var(--admin-border);
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow: var(--admin-shadow);
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.donor-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    scrollbar-width: thin;
+    scrollbar-color: #CBD5E1 transparent;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.admin-donors-table {
+    width: 100%;
+
+    min-width: 850px;
+
+    border-collapse: collapse;
+
+    background: var(--admin-white);
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.admin-donors-table th {
+    padding: 13px 18px;
+
+    text-align: left;
+
+    background: #F8FAFC;
+
+    border-bottom: 1px solid var(--admin-border);
+
+    color: var(--admin-muted);
+
+    font-family: inherit;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.admin-donors-table td {
+    padding: 15px 18px;
+
+    border-bottom: 1px solid var(--admin-border-light);
+
+    color: var(--admin-text-light);
+
+    font-size: 12px;
+
+    vertical-align: middle;
+}
+
+.admin-donors-table tbody tr {
+    background: var(--admin-white);
+
+    transition:
+        background 0.15s ease;
+}
+
+.admin-donors-table tbody tr:hover {
+    background: #F8FAFC;
+}
+
+.admin-donors-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   DONOR INFORMATION
+========================================================= */
+
+.donor-info {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+}
+
+
+/* =========================================================
+   DONOR AVATAR
+========================================================= */
+
+.donor-avatar {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 10px;
+
+    object-fit: cover;
+
+    flex-shrink: 0;
+
+    border: 1px solid var(--admin-border);
+}
+
+.donor-avatar-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--admin-blue-soft);
+
+    border-color: #BFDBFE;
+
+    color: var(--admin-blue);
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   DONOR NAME
+========================================================= */
+
+.donor-info strong {
+    display: block;
+
+    color: var(--admin-navy);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    line-height: 1.4;
+}
+
+.donor-info span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #94A3B8;
+
+    font-size: 10px;
+
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.donor-contact strong {
+    display: block;
+
+    max-width: 220px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    color: var(--admin-text-light);
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.donor-contact span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #94A3B8;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.donor-location strong {
+    display: block;
+
+    color: var(--admin-text-light);
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.donor-location span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #94A3B8;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   DONATION COUNT
+========================================================= */
+
+.donation-count {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 30px;
+    height: 28px;
+
+    padding: 0 8px;
+
+    border-radius: 8px;
+
+    background: var(--admin-blue-soft);
+
+    border: 1px solid #BFDBFE;
+
+    color: var(--admin-blue);
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.donor-status {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.donor-status.active {
+    background: var(--admin-success-bg);
+
+    color: var(--admin-success);
+}
+
+.donor-status.inactive {
+    background: #F1F5F9;
+
+    color: #64748B;
+}
+
+
+/* =========================================================
+   STATUS DOT
+========================================================= */
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: currentColor;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   REGISTERED DATE
+========================================================= */
+
+.registered-date {
+    color: var(--admin-muted);
+
+    font-size: 11px;
+    font-weight: 500;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   ERROR MESSAGE
+========================================================= */
+
+.admin-error-message {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 18px;
+
+    padding: 12px 15px;
+
+    border-radius: 9px;
+
+    background: var(--admin-danger-bg);
+
+    border: 1px solid #FECACA;
+
+    color: var(--admin-danger);
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   LOADING CARD
+========================================================= */
+
+.admin-loading-card {
+    min-height: 300px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--admin-white);
+
+    border: 1px solid var(--admin-border);
+
+    border-radius: 14px;
+
+    box-shadow: var(--admin-shadow);
+}
+
+.admin-loader {
+    width: 34px;
+    height: 34px;
+
+    border: 3px solid #E2E8F0;
+
+    border-top-color: var(--admin-blue);
+
+    border-radius: 50%;
+
+    animation: donorSpin 0.8s linear infinite;
+}
+
+.admin-loading-card p {
+    margin: 12px 0 0;
+
+    color: var(--admin-muted);
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+@keyframes donorSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.admin-empty-card {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 300px;
+
+    padding: 50px 30px;
+
+    background: var(--admin-white);
+
+    border: 1px solid var(--admin-border);
+
+    border-radius: 14px;
+
+    box-shadow: var(--admin-shadow);
+
+    text-align: center;
+}
+
+.admin-empty-icon {
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 17px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: var(--admin-blue-soft);
+
+    border: 1px solid #BFDBFE;
+
+    font-size: 26px;
+}
+
+.admin-empty-card h2 {
+    margin: 0;
+
+    color: var(--admin-navy);
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.admin-empty-card p {
+    margin: 8px auto 0;
+
+    max-width: 420px;
+
+    color: var(--admin-muted);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   TABLE SCROLLBAR
+========================================================= */
+
+.donor-table-wrapper::-webkit-scrollbar {
+    height: 6px;
+}
+
+.donor-table-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.donor-table-wrapper::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+
+    border-radius: 10px;
+}
+
+.donor-table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .admin-page-content {
+        padding: 25px;
+    }
+
+    .admin-page-header h1 {
+        font-size: 25px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .admin-page-content {
+        padding: 20px 15px 30px;
+    }
+
+    .admin-page-header {
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .admin-page-header h1 {
+        font-size: 23px;
+    }
+
+    .admin-page-header p {
+        font-size: 12px;
+    }
+
+    .admin-refresh-btn {
+        padding: 9px 12px;
+
+        font-size: 11px;
+    }
+
+    .donor-toolbar {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+    .donor-filter-buttons {
+        width: 100%;
+
+        overflow-x: auto;
+    }
+
+    .donor-filter-buttons button {
+        white-space: nowrap;
+    }
+
+    .donor-count {
+        font-size: 11px;
+    }
+}
+
+
+@media (max-width: 430px) {
+
+    .admin-page-content {
+        padding: 16px 12px 25px;
+    }
+
+    .admin-page-header {
+        flex-direction: column;
+    }
+
+    .admin-refresh-btn {
+        width: 100%;
+    }
+
+    .donor-filter-buttons {
+        width: 100%;
+    }
+
+    .admin-page-header h1 {
+        font-size: 21px;
+    }
+
+    .admin-page-header p {
+        font-size: 11px;
+    }
+
+    .admin-donors-table th {
+        padding: 12px 14px;
+    }
+
+    .admin-donors-table td {
+        padding: 13px 14px;
+    }
+}
+
+
+/* =========================================================
+   OPTIONAL DARK MODE
+   Keeps compatibility with AdminLayout dark mode
+========================================================= */
+
+.dark .admin-page-content {
+    background: #0F172A;
+}
+
+.dark .admin-page-header {
+    border-bottom-color: #334155;
+}
+
+.dark .admin-page-header h1 {
+    color: #F8FAFC;
+}
+
+.dark .admin-page-header p,
+.dark .donor-count {
+    color: #94A3B8;
+}
+
+.dark .donor-filter-buttons {
+    background: #1E293B;
+    border-color: #334155;
+}
+
+.dark .donor-filter-buttons button {
+    color: #94A3B8;
+}
+
+.dark .donor-filter-buttons button:hover {
+    background: #334155;
+    color: #F8FAFC;
+}
+
+.dark .donor-filter-buttons button.active {
+    background: #2563EB;
+    border-color: #2563EB;
+    color: #FFFFFF;
+}
+
+.dark .admin-donors-card,
+.dark .admin-loading-card,
+.dark .admin-empty-card {
+    background: #1E293B;
+    border-color: #334155;
+}
+
+.dark .admin-donors-table {
+    background: #1E293B;
+}
+
+.dark .admin-donors-table th {
+    background: #172033;
+    border-bottom-color: #334155;
+    color: #94A3B8;
+}
+
+.dark .admin-donors-table td {
+    border-bottom-color: #334155;
+    color: #CBD5E1;
+}
+
+.dark .admin-donors-table tbody tr {
+    background: #1E293B;
+}
+
+.dark .admin-donors-table tbody tr:hover {
+    background: #263449;
+}
+
+.dark .donor-info strong,
+.dark .donor-contact strong,
+.dark .donor-location strong,
+.dark .admin-empty-card h2 {
+    color: #F8FAFC;
+}
+
+.dark .donor-info span,
+.dark .donor-contact span,
+.dark .donor-location span {
+    color: #94A3B8;
+}
+
+.dark .registered-date {
+    color: #94A3B8;
+}
+
+.dark .donor-status.inactive {
+    background: #334155;
+    color: #CBD5E1;
+}
+
+.dark .admin-loader {
+    border-color: #334155;
+    border-top-color: #2563EB;
+}

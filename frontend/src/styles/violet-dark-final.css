@@ -1,0 +1,599 @@
+/* =========================================================
+   FINAL BLUE GRADIENT THEME LOCK
+   Visual/CSS only. No application logic is changed.
+   This file intentionally sits last so page-specific legacy
+   colors cannot leak into light/dark mode.
+========================================================= */
+
+:root,
+html[data-theme="light"] {
+  --bg-primary: #F7FAFF !important;
+  --bg-secondary: #EFF6FF !important;
+  --bg-card: #FFFFFF !important;
+  --surface-soft: #DBEAFE !important;
+  --surface-warm: #EFF6FF !important;
+  --text-primary: #0F172A !important;
+  --text-secondary: #475569 !important;
+  --text-muted: #94A3B8 !important;
+  --border-color: #E2E8F0 !important;
+  --input-bg: #FFFFFF !important;
+  --input-text: #0F172A !important;
+  --primary: #2563EB !important;
+  --primary-hover: #1D4ED8 !important;
+  --primary-light: #DBEAFE !important;
+  --accent: #38BDF8 !important;
+  --accent-hover: #2563EB !important;
+  --gradient-primary: linear-gradient(135deg, #1D4ED8 0%, #38BDF8 100%) !important;
+  --gradient-soft: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%) !important;
+}
+
+html[data-theme="dark"],
+body.dark-theme,
+html.dark-mode {
+  --bg-primary: #08111F !important;
+  --bg-secondary: #0D1B2A !important;
+  --bg-card: #122235 !important;
+  --surface-soft: #172B43 !important;
+  --surface-warm: #1B314D !important;
+  --text-primary: #F8FBFF !important;
+  --text-secondary: #C5D3E1 !important;
+  --text-muted: #94A9BF !important;
+  --border-color: #29445F !important;
+  --input-bg: #172B43 !important;
+  --input-text: #F8FBFF !important;
+  --primary: #60A5FA !important;
+  --primary-hover: #93C5FD !important;
+  --primary-light: #163A63 !important;
+  --accent: #38BDF8 !important;
+  --accent-hover: #60A5FA !important;
+  --gradient-primary: linear-gradient(135deg, #1E40AF 0%, #38BDF8 100%) !important;
+  --gradient-soft: linear-gradient(135deg, #172B43 0%, #20364F 100%) !important;
+}
+
+html,
+body,
+#root {
+  background: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+body,
+body *,
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-ui) !important;
+}
+
+/* App shells */
+.dashboard-page,
+.donor-layout,
+.donor-layout-content,
+.donor-dashboard-modern,
+.ngo-layout,
+.ngo-layout-content,
+.ngo-main,
+.ngo-page-shell,
+.ngo-feature-page,
+.profile-page,
+.donate-page,
+.my-donations-page,
+.activity-page,
+.home-page,
+.login-page,
+.register-choice-page,
+.explore-ngos-page {
+  background: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Donor hero: blue, never blue */
+.donor-dashboard-hero {
+  background:
+    radial-gradient(circle at 82% 15%, rgba(255,255,255,.12), transparent 24%),
+    linear-gradient(135deg, #1D4ED8 0%, #2563EB 52%, #60A5FA 100%) !important;
+  color: #FFFFFF !important;
+}
+
+html[data-theme="dark"] .donor-dashboard-hero,
+body.dark-theme .donor-dashboard-hero,
+html.dark-mode .donor-dashboard-hero {
+  background:
+    radial-gradient(circle at 82% 15%, rgba(96,165,250,.16), transparent 25%),
+    linear-gradient(135deg, #102A4A 0%, #174A7A 55%, #1D4ED8 100%) !important;
+  box-shadow: 0 22px 55px rgba(0,0,0,.34) !important;
+}
+
+.donor-primary-cta {
+  background: #FFFFFF !important;
+  color: #1D4ED8 !important;
+}
+
+.donor-primary-cta:hover { background: #EFF6FF !important; }
+
+/* Generic surfaces */
+.card,
+.dashboard-card,
+.dashboard-panel,
+.stat-card,
+.profile-card,
+.form-card,
+.donate-card,
+.donation-card,
+.notification-card,
+.my-donation-card,
+.empty-donations,
+.feature-card,
+.how-it-works,
+.login-card,
+.ngo-card,
+.ngo-item-card,
+.ngo-form-card,
+.ngo-settings-card,
+.ngo-notice,
+.ngo-impact-card,
+.ngo-info-card,
+.ngo-details-header,
+.ngo-details-section,
+.quick-action,
+.dashboard-stat-card {
+  background: var(--bg-card) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Dashboard cards: eliminate legacy blue fallbacks */
+.dashboard-card h2 { color: var(--primary) !important; }
+.dashboard-card h3 { color: var(--text-secondary) !important; }
+
+/* Donor sidebar */
+.donor-sidebar {
+  background: var(--bg-card) !important;
+  color: var(--text-primary) !important;
+  border-right-color: var(--border-color) !important;
+}
+
+.sidebar-link { color: var(--text-secondary) !important; }
+.sidebar-link:hover,
+.sidebar-link.active {
+  color: var(--primary) !important;
+  background: var(--primary-light) !important;
+}
+.sidebar-badge { background: var(--primary) !important; color: #fff !important; }
+.sidebar-theme-row { background: var(--bg-secondary) !important; border-color: var(--border-color) !important; }
+.sidebar-logout:hover { color: var(--primary) !important; background: var(--primary-light) !important; }
+
+/* NGO sidebar */
+.ngo-sidebar {
+  background: var(--bg-card) !important;
+  color: var(--text-primary) !important;
+  border-right-color: var(--border-color) !important;
+}
+.ngo-brand,
+.ngo-sidebar-bottom { border-color: var(--border-color) !important; }
+.ngo-brand strong,
+.ngo-user strong { color: var(--text-primary) !important; }
+.ngo-brand small,
+.ngo-user small { color: var(--text-muted) !important; }
+.ngo-brand-mark,
+.ngo-avatar { background: var(--primary-light) !important; color: var(--primary) !important; }
+.ngo-nav-label { color: var(--text-muted) !important; }
+.ngo-nav-item,
+.ngo-bottom-item { color: var(--text-secondary) !important; }
+.ngo-nav-item:hover,
+.ngo-bottom-item:hover,
+.ngo-nav-item.active {
+  background: var(--primary-light) !important;
+  color: var(--primary) !important;
+}
+
+/* NGO dark sidebar becomes a true dark-blue surface */
+html[data-theme="dark"] .ngo-sidebar,
+body.dark-theme .ngo-sidebar,
+html.dark-mode .ngo-sidebar {
+  background: #0D1B2A !important;
+  border-right-color: #29445F !important;
+}
+
+/* Navigation bars */
+.donor-appbar,
+.ngo-appbar,
+.navbar {
+  background: color-mix(in srgb, var(--bg-card) 96%, transparent) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Inputs */
+input,
+select,
+textarea,
+.input-wrapper,
+.search-bar,
+.search-input {
+  background: var(--input-bg) !important;
+  color: var(--input-text) !important;
+  border-color: var(--border-color) !important;
+}
+
+input::placeholder,
+textarea::placeholder { color: var(--text-muted) !important; }
+
+input:focus,
+select:focus,
+textarea:focus,
+.input-wrapper:focus-within {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 16%, transparent) !important;
+}
+
+/* Buttons */
+.btn-primary,
+.primary-btn,
+.donate-btn,
+.cta-btn,
+button.primary,
+button[type="submit"],
+.home-primary-btn,
+.get-started-button,
+.ngo-save-button,
+.ngo-action-row button {
+  background: var(--gradient-primary) !important;
+  color: #FFFFFF !important;
+  border-color: transparent !important;
+}
+
+.btn-primary:hover,
+.primary-btn:hover,
+.donate-btn:hover,
+.cta-btn:hover,
+button.primary:hover,
+button[type="submit"]:hover {
+  background: linear-gradient(135deg, var(--primary-hover), var(--primary)) !important;
+}
+
+/* AI insight panel */
+.ai-insight-panel {
+  background: var(--gradient-primary) !important;
+  color: #FFFFFF !important;
+}
+
+html[data-theme="dark"] .ai-insight-panel,
+body.dark-theme .ai-insight-panel,
+html.dark-mode .ai-insight-panel {
+  background: linear-gradient(135deg, #123B68 0%, #1D4ED8 100%) !important;
+}
+
+/* Impact / highlight surfaces */
+.donor-impact-banner,
+.gradient-soft {
+  background: var(--gradient-soft) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Status colors stay semantic */
+.mini-status.accepted,
+.mini-status.collected,
+.mini-status.completed,
+.mini-status.delivered {
+  background: #ECFDF3 !important;
+  color: #15803D !important;
+}
+
+html[data-theme="dark"] .mini-status.accepted,
+html[data-theme="dark"] .mini-status.collected,
+html[data-theme="dark"] .mini-status.completed,
+html[data-theme="dark"] .mini-status.delivered,
+body.dark-theme .mini-status.accepted,
+body.dark-theme .mini-status.collected,
+body.dark-theme .mini-status.completed,
+body.dark-theme .mini-status.delivered {
+  background: #12351F !important;
+  color: #86EFAC !important;
+}
+
+/* Dark-mode global correction for common legacy surfaces */
+html[data-theme="dark"] .dashboard-card,
+html[data-theme="dark"] .stat-card,
+html[data-theme="dark"] .dashboard-panel,
+html[data-theme="dark"] .quick-action,
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .donate-card,
+html[data-theme="dark"] .profile-card,
+html[data-theme="dark"] .notification-card,
+html[data-theme="dark"] .donation-card,
+html[data-theme="dark"] .my-donation-card,
+html[data-theme="dark"] .ngo-card,
+html[data-theme="dark"] .ngo-form-card,
+html[data-theme="dark"] .ngo-settings-card,
+html[data-theme="dark"] .ngo-notice,
+html[data-theme="dark"] .ngo-impact-card,
+body.dark-theme .dashboard-card,
+body.dark-theme .stat-card,
+body.dark-theme .dashboard-panel,
+body.dark-theme .quick-action,
+body.dark-theme .card,
+body.dark-theme .donate-card,
+body.dark-theme .profile-card,
+body.dark-theme .notification-card,
+body.dark-theme .donation-card,
+body.dark-theme .my-donation-card,
+body.dark-theme .ngo-card,
+body.dark-theme .ngo-form-card,
+body.dark-theme .ngo-settings-card,
+body.dark-theme .ngo-notice,
+body.dark-theme .ngo-impact-card {
+  background: #122235 !important;
+  color: #F8FBFF !important;
+  border-color: #29445F !important;
+}
+
+html[data-theme="dark"] table,
+body.dark-theme table { color: var(--text-primary) !important; }
+html[data-theme="dark"] th,
+body.dark-theme th { background: #172B43 !important; color: #F8FBFF !important; }
+html[data-theme="dark"] td,
+body.dark-theme td { border-color: #29445F !important; color: #C5D3E1 !important; }
+
+/* Remove accidental blue decorative styling from known shared dashboard controls */
+.dashboard-card h2,
+.dashboard-stat-card strong,
+.section-heading span,
+.text-link,
+.donor-appbar-kicker,
+.ngo-appbar-kicker,
+.ngo-back-button {
+  color: var(--primary) !important;
+}
+
+/* Smooth theme transition without excessive motion */
+body,
+.donor-sidebar,
+.ngo-sidebar,
+.donor-appbar,
+.ngo-appbar,
+.navbar,
+.card,
+.dashboard-card,
+.dashboard-panel,
+.stat-card,
+.quick-action,
+input,
+select,
+textarea {
+  transition: background-color .25s ease, color .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+
+/* Blue-gradient workspace polish */
+.donor-sidebar, .ngo-sidebar { background: var(--bg-card) !important; }
+.sidebar-link.active, .ngo-nav-item.active {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 12%, var(--bg-card)), color-mix(in srgb, var(--accent) 10%, var(--bg-card))) !important;
+  color: var(--primary) !important;
+}
+.donor-appbar, .ngo-appbar, .navbar {
+  box-shadow: 0 1px 0 var(--border-color) !important;
+}
+.card:hover, .dashboard-card:hover, .dashboard-panel:hover, .stat-card:hover, .quick-action:hover {
+  border-color: color-mix(in srgb, var(--primary) 24%, var(--border-color)) !important;
+}
+html[data-theme="dark"] .donor-sidebar, body.dark-theme .donor-sidebar, html.dark-mode .donor-sidebar,
+html[data-theme="dark"] .ngo-sidebar, body.dark-theme .ngo-sidebar, html.dark-mode .ngo-sidebar {
+  background: #0D1B2A !important;
+  border-right-color: #29445F !important;
+}
+html[data-theme="dark"] .donor-appbar, body.dark-theme .donor-appbar, html.dark-mode .donor-appbar,
+html[data-theme="dark"] .ngo-appbar, body.dark-theme .ngo-appbar, html.dark-mode .ngo-appbar,
+html[data-theme="dark"] .navbar, body.dark-theme .navbar, html.dark-mode .navbar {
+  background: rgba(13,27,42,.96) !important;
+  border-color: #29445F !important;
+}
+html[data-theme="dark"] .card:hover, html[data-theme="dark"] .dashboard-card:hover,
+html[data-theme="dark"] .dashboard-panel:hover, html[data-theme="dark"] .stat-card:hover,
+html[data-theme="dark"] .quick-action:hover {
+  border-color: #3B82F6 !important;
+}
+
+
+/* =========================================================
+   FINAL BLUE THEME LOCK
+   One cohesive blue visual language across the entire app.
+   CSS ONLY. No application behavior changed.
+   ========================================================= */
+
+html[data-theme="dark"], body.dark-theme {
+  --app-bg: #08111F !important;
+  --app-surface: #122235 !important;
+  --app-surface-2: #172B43 !important;
+  --app-border: #29445F !important;
+  --app-text: #F8FBFF !important;
+  --app-text-2: #C4D4E3 !important;
+  --app-muted: #8FA4B8 !important;
+  --app-violet: #60A5FA !important;
+  --app-violet-strong: #2563EB !important;
+  --app-violet-bright: #38BDF8 !important;
+  --app-violet-soft: #17345A !important;
+  --app-gradient: linear-gradient(135deg, #1D4ED8 0%, #38BDF8 100%) !important;
+}
+
+/* Dark page surfaces */
+html[data-theme="dark"] body,
+body.dark-theme {
+  background: #08111F !important;
+  color: #F8FBFF !important;
+}
+
+/* Sidebar and navbar */
+html[data-theme="dark"] .donor-sidebar,
+body.dark-theme .donor-sidebar,
+html[data-theme="dark"] .ngo-sidebar,
+body.dark-theme .ngo-sidebar {
+  background: #0B1728 !important;
+  border-color: #29445F !important;
+}
+
+html[data-theme="dark"] .donor-appbar,
+body.dark-theme .donor-appbar,
+html[data-theme="dark"] .ngo-appbar,
+body.dark-theme .ngo-appbar,
+html[data-theme="dark"] .navbar,
+body.dark-theme .navbar {
+  background: #0D1B2A !important;
+  border-color: #29445F !important;
+}
+
+/* ALL workspace active/hover states: blue, never legacy red */
+html[data-theme="dark"] .sidebar-link:hover,
+body.dark-theme .sidebar-link:hover,
+html[data-theme="dark"] .sidebar-link.active,
+body.dark-theme .sidebar-link.active,
+html[data-theme="dark"] .ngo-sidebar-link:hover,
+body.dark-theme .ngo-sidebar-link:hover,
+html[data-theme="dark"] .ngo-sidebar-link.active,
+body.dark-theme .ngo-sidebar-link.active {
+  background: linear-gradient(90deg, rgba(37,99,235,.28), rgba(56,189,248,.10)) !important;
+  color: #FFFFFF !important;
+}
+
+html[data-theme="dark"] .sidebar-link.active::before,
+body.dark-theme .sidebar-link.active::before,
+html[data-theme="dark"] .ngo-sidebar-link.active::before,
+body.dark-theme .ngo-sidebar-link.active::before {
+  background: #60A5FA !important;
+}
+
+/* Appearance/theme control: blue in every state */
+.sidebar-theme-row,
+.ngo-theme-row {
+  background: rgba(37,99,235,.10) !important;
+  border-color: rgba(96,165,250,.20) !important;
+}
+
+.sidebar-theme-row:hover,
+.sidebar-theme-row:focus-within,
+.ngo-theme-row:hover,
+.ngo-theme-row:focus-within {
+  background: rgba(37,99,235,.18) !important;
+  border-color: rgba(96,165,250,.32) !important;
+}
+
+html[data-theme="dark"] .sidebar-theme-row,
+body.dark-theme .sidebar-theme-row,
+html[data-theme="dark"] .ngo-theme-row,
+body.dark-theme .ngo-theme-row {
+  background: #142B43 !important;
+  border-color: #29445F !important;
+}
+
+html[data-theme="dark"] .sidebar-theme-row:hover,
+body.dark-theme .sidebar-theme-row:hover,
+html[data-theme="dark"] .sidebar-theme-row:focus-within,
+body.dark-theme .sidebar-theme-row:focus-within,
+html[data-theme="dark"] .ngo-theme-row:hover,
+body.dark-theme .ngo-theme-row:hover,
+html[data-theme="dark"] .ngo-theme-row:focus-within,
+body.dark-theme .ngo-theme-row:focus-within {
+  background: #17345A !important;
+  border-color: #3B6B9E !important;
+}
+
+/* Home page: remove the maroon dark hero entirely */
+body.dark-theme .home-page,
+html[data-theme="dark"] .home-page {
+  background: #08111F !important;
+  color: #F8FBFF !important;
+}
+
+body.dark-theme .home-hero,
+html[data-theme="dark"] .home-hero {
+  background:
+    radial-gradient(circle at 82% 18%, rgba(56,189,248,.16), transparent 24%),
+    radial-gradient(circle at 18% 72%, rgba(37,99,235,.18), transparent 28%),
+    linear-gradient(135deg, #12345A 0%, #1D4ED8 58%, #2563EB 100%) !important;
+  border-color: #315B8A !important;
+}
+
+body.dark-theme .home-hero::before,
+html[data-theme="dark"] .home-hero::before {
+  border-color: rgba(96,165,250,.20) !important;
+}
+
+body.dark-theme .home-hero::after,
+html[data-theme="dark"] .home-hero::after {
+  background: radial-gradient(circle, rgba(56,189,248,.10), transparent 70%) !important;
+}
+
+body.dark-theme .home-eyebrow,
+html[data-theme="dark"] .home-eyebrow {
+  border-color: rgba(147,197,253,.28) !important;
+  background: rgba(37,99,235,.14) !important;
+  color: #93C5FD !important;
+}
+
+body.dark-theme .home-primary-btn,
+html[data-theme="dark"] .home-primary-btn,
+body.dark-theme .home-final-btn,
+html[data-theme="dark"] .home-final-btn,
+body.dark-theme .home-choice-register,
+html[data-theme="dark"] .home-choice-register {
+  background: linear-gradient(135deg, #1D4ED8, #38BDF8) !important;
+  color: #FFFFFF !important;
+}
+
+/* Donor dashboard hero: same blue family as home */
+html[data-theme="dark"] .donor-dashboard-hero,
+body.dark-theme .donor-dashboard-hero {
+  background:
+    radial-gradient(circle at 84% 18%, rgba(96,165,250,.14), transparent 24%),
+    linear-gradient(135deg, #12345A 0%, #1D4ED8 58%, #2563EB 100%) !important;
+  border-color: #315B8A !important;
+}
+
+html[data-theme="dark"] .ai-insight-panel,
+body.dark-theme .ai-insight-panel {
+  background: linear-gradient(145deg, #17345A, #214F86) !important;
+}
+
+/* Common dark cards */
+html[data-theme="dark"] .card,
+body.dark-theme .card,
+html[data-theme="dark"] .dashboard-card,
+body.dark-theme .dashboard-card,
+html[data-theme="dark"] .stat-card,
+body.dark-theme .stat-card,
+html[data-theme="dark"] .donation-card,
+body.dark-theme .donation-card,
+html[data-theme="dark"] .ngo-card,
+body.dark-theme .ngo-card,
+html[data-theme="dark"] .profile-card,
+body.dark-theme .profile-card,
+html[data-theme="dark"] .form-card,
+body.dark-theme .form-card,
+html[data-theme="dark"] .notification-card,
+body.dark-theme .notification-card,
+html[data-theme="dark"] .modal-content,
+body.dark-theme .modal-content,
+html[data-theme="dark"] .dropdown-menu,
+body.dark-theme .dropdown-menu {
+  background: #122235 !important;
+  color: #F8FBFF !important;
+  border-color: #29445F !important;
+}
+
+/* Links and primary accents */
+html[data-theme="dark"] a,
+body.dark-theme a {
+  --link-color: #60A5FA;
+}
+
+/* Keep error semantics available, but do not let legacy red theme bleed into surfaces */
+html[data-theme="dark"] .status-rejected,
+body.dark-theme .status-rejected {
+  background: #17345A !important;
+  color: #93C5FD !important;
+}
