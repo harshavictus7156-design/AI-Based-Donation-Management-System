@@ -1,12 +1,27 @@
-
+# Environments & Secrets
 .env
 .env.*
+.streamlit/secrets.toml
+
+# Virtual Environments
 venv/
 .venv/
+env/
+
+# Python Cache & Bytecode
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+
+# Node.js (Legacy)
 node_modules/
 dist/
+
+# Logs & Diagnostics
 *.log
+scratch/
+
+# IDE files
 .vscode/
 .idea/
